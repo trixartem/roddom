@@ -1,0 +1,32 @@
+{
+  "name": "roddom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-css": "./node_modules/stylus/bin/stylus about-2/CSS/index.styl  -u ./node_modules/autoprefixer-stylus/index.js --out about-2/CSS/index.css -w ./about-2/CSS",
+    "watch-js": "/node_modules/watchify/bin/cmd.js about-2/JS/bundle.js -o about-2/JS/index.js -v",
+    "build-js": "./node_modules/browserify/bin/cmd.js about-2/JS/bundle.js -o about-2/JS/index.js",
+    "build-css": "./node_modules/stylus/bin/stylus about-2/CSS/index.styl  -u ./node_modules/autoprefixer-stylus/index.js --out about-2/CSS/index.css ",
+    "build": "npm run build-js && npm run build-css"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trixartem/roddom.git"
+  },
+  "author": "Kuvaldin Artem @trixartem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trixartem/roddom/issues"
+  },
+  "homepage": "https://github.com/trixartem/roddom",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.7.1",
+    "browserify": "^11.0.1",
+    "stylus": "^0.52.4",
+    "watch-js": "0.0.7",
+    "watchify": "^3.4.0"
+  }
+}

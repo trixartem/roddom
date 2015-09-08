@@ -1,2 +1,7 @@
+.idea/watcherTasks.xml
 .idea
+node_modules
+bootstrap-4.0.0-alpha
+
+npm-debug.log
 .DS_Store

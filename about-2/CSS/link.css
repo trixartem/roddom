@@ -1,0 +1,12 @@
+.link {
+  -webkit-transition: color 0.2s ease;
+          transition: color 0.2s ease;
+}
+.link._cabinet {
+  color: #bcbcbc;
+  font-size: 12px;
+  text-decoration: underline;
+}
+.link._cabinet:hover {
+  color: #37b39c;
+}

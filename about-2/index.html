@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="ru">
     <meta charset="UTF-8">
-    <!--FIXME заполнить описание страницы-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!--FIXME заполнить описание страницы для SEO-->
     <meta name=”description” content=””>
     <meta name="Keywords" content="">
 
@@ -23,14 +26,59 @@
     <!--Изображение должно быть квадратным не менее чем 60x60px-->
     <meta name=”twitter:image” content=””>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../bootstrap-4.0.0-alpha/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <link rel="stylesheet" href="CSS/index.css">
     <title></title>
 </head>
 <body>
-<header></header>
-<main></main>
-<footer></footer>
+<header class="header container">
+    <div class="row">
+        <div class="header__left col-md-3">
+            <figure class="logo"><a class="link"><img src="image/logo.png"></a></figure>
+        </div>
+        <div class="header__right col-md-offset-3">
+            <div class="header__contacts"><a href="#" class="link _cabinet">Личный кабинет</a>
+                <figure class="header__search"></figure>
+                <span class="header__phone">+7(495)321-54-76</span></div>
+            <nav class="header__menu">
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a class="menu__link " href="#">О нас</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Специалисты</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Прайс</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link _active" href="#">Расписание</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Лицензия</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Магазин</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="line"></div>
+<main class="body container">main content</main>
+<footer class="footer">
+    <div class="footer__log">
+        <figure class="logo"><a class="link"><img src=""></a></figure>
+    </div>
+    <div class="footer__copyright">To Be Parents. Все права защещены. 2015&copy;</div>
+    <div class="footer__right">
+        <div class="footer__maps"></div>
+        <div class="footer__social"></div>
+    </div>
+</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="JS/index.js"></script>

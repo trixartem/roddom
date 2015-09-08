@@ -1,15 +1,3 @@
-.link {
-  -webkit-transition: color 0.2s ease;
-          transition: color 0.2s ease;
-}
-.link._cabinet {
-  color: #bcbcbc;
-  font-size: 12px;
-  text-decoration: underline;
-}
-.link._cabinet:hover {
-  color: #37b39c;
-}
 .header__search {
   display: inline-block;
   width: 12px;
@@ -97,12 +85,4 @@
   .logo img {
     width: auto;
   }
-}
-main {
-  opacity: 0.9;
-  background: #f00;
-  color: #fff;
-}
-body {
-  font-weight: 300;
 }
