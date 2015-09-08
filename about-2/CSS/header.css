@@ -14,13 +14,16 @@
   padding-right: 17px;
 }
 .header__menu {
-  margin-top: 19px;
+  margin-top: 10px;
 }
 .header__phone {
   font-size: 12px;
 }
 .logo {
   margin: 16px 0 15px 22px;
+}
+.line {
+  border-top: 1px solid #d5d5d5;
 }
 .menu__link {
   padding: 0.49em 0.8rem;
