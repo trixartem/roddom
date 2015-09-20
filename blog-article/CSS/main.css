@@ -1,0 +1,243 @@
+body {
+  color: #535353;
+}
+.body__breadcrumb {
+  margin: 19px 0 14px;
+  padding: 0 1.7375rem;
+}
+.body__main {
+  padding: 0 1.7375rem;
+}
+.body__share {
+  position: relative;
+  margin-bottom: 35px;
+}
+.media-right {
+  padding-left: 36px;
+}
+.breadcrumb {
+  margin-bottom: 0;
+  background: none;
+  padding: 0;
+  font-size: 12px;
+}
+.breadcrumb > li + li:before {
+  content: ' >';
+  color: #b2b2b2;
+}
+.breadcrumb__link {
+  color: #00b898;
+  text-decoration: underline !important;
+  -webkit-transition: color 0.2s ease;
+          transition: color 0.2s ease;
+  font-weight: 400;
+}
+.breadcrumb__link:hover {
+  color: rgba(0,184,152,0.6);
+}
+.breadcrumb > .active {
+  color: #b2b2b2;
+}
+.button_size_m {
+  border: 1px solid;
+  font-size: 13px;
+  vertical-align: middle;
+  border-radius: 5px;
+  line-height: 16px;
+  vertical-align: middle;
+  font-style: italic;
+  opacity: 1;
+  outline: none;
+  -webkit-transition: opacity 0.2s ease-in;
+          transition: opacity 0.2s ease-in;
+}
+.button_size_m:hover {
+  opacity: 0.6;
+}
+.share__img {
+  max-width: 232px;
+}
+.share__text {
+  position: absolute;
+  top: 80px;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.other-list__header {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.other-list__item {
+  border-top: 1px solid #d5d5d5;
+}
+.other-list__name {
+  margin: 17px 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+.other-list__button {
+  margin: 0 10px;
+}
+.icon {
+  display: table;
+}
+.icon__wrap {
+  display: table-row;
+}
+.icon__item {
+  display: table-cell;
+}
+.icon__like,
+.icon__messages,
+.icon__view,
+.icon__share {
+  background-image: url("../image/icons.svg");
+  display: inline-block;
+  height: 12px;
+  vertical-align: middle;
+  opacity: 1;
+}
+.icon__like {
+  -webkit-transition: opacity 0.2s ease-out;
+          transition: opacity 0.2s ease-out;
+  cursor: pointer;
+  background-position: 279px -417px;
+  width: 16px;
+}
+.icon__like:hover {
+  opacity: 0.2;
+}
+.icon__messages {
+  background-position: 230px -417px;
+  width: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: opacity 0.2s ease-out;
+          transition: opacity 0.2s ease-out;
+}
+.icon__messages:hover {
+  opacity: 0.2;
+}
+.icon__view {
+  background-position: 188px -417px;
+  width: 17px;
+}
+.icon__share {
+  background-position: 131px -417px;
+  width: 13px;
+  cursor: pointer;
+  -webkit-transition: opacity 0.2s ease-out;
+          transition: opacity 0.2s ease-out;
+}
+.icon__share:hover {
+  opacity: 0.2;
+}
+.icon._white .icon__like,
+.icon._white .icon__messages,
+.icon._white .icon__view,
+.icon._white .icon__share {
+  background-position-y: -437px;
+}
+.icon._white .icon__counter {
+  color: #fff;
+}
+.icon__counter {
+  font-size: 12px;
+  color: #c6c6c6;
+  display: inline-block;
+  min-width: 30px;
+  padding-right: 10px;
+}
+.article__title-image {
+  position: relative;
+  margin-bottom: 40px;
+}
+.article__title-image img {
+  width: 100%;
+}
+.article__link {
+  font-style: italic;
+  color: #40ccb1;
+  -webkit-transition: color 0.2s ease;
+          transition: color 0.2s ease;
+}
+.article__link:hover {
+  color: #49ffe3;
+  text-decoration: none;
+}
+.article__header {
+  text-align: center;
+  color: #37b39c;
+  font-weight: 400;
+  margin: 80px 0 17px;
+  font-size: 36px;
+}
+.article__note {
+  color: #9d9d9c;
+  line-height: 29px;
+  max-width: 500px;
+  font-size: 20px;
+  display: block;
+  margin: 70px auto 48px;
+}
+.article__note:before {
+  display: block;
+  width: 150px;
+  border-top: 2px solid;
+  content: '';
+  margin: 0 auto 27px;
+}
+.article__note:after {
+  display: block;
+  width: 150px;
+  border-top: 2px solid;
+  content: '';
+  margin: 25px auto 0;
+}
+.article__text {
+  color: #949393;
+  line-height: 26px;
+}
+.article__title {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.article__title-other {
+  margin-top: 48px;
+  font-size: 12px;
+}
+.article__title-text {
+  margin: 12px 0 36px;
+  font-size: 42px;
+  font-weight: 700;
+}
+.article__title-link {
+  display: inline-block;
+  margin-right: 48px;
+  color: #fff;
+  text-decoration: underline;
+}
+.article__title-link:hover {
+  color: #fff;
+}
+.article__author {
+  margin-bottom: 30px;
+}
+.article__author::before {
+  content: '';
+  display: block;
+  border-top: 1px solid #fff;
+  width: 95px;
+  margin: 0 auto 16px;
+}
+.article__buttons .icon {
+  margin: 0 auto;
+}
