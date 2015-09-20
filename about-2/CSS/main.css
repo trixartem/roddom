@@ -42,9 +42,10 @@ body {
   color: #b2b2b2;
 }
 .creators {
-  margin-top: 52px;
+  margin-top: 22px;
 }
 .creators__item {
+  margin-top: 30px;
   text-align: center;
 }
 .creators__title {
@@ -81,6 +82,7 @@ body {
   background: #fff;
   border-radius: 5px;
   padding: 12px 41px;
+  border: 1px solid #e5e5e5;
 }
 .gmaps__contacts._hidden {
   display: none;
@@ -278,7 +280,7 @@ body {
     overflow: auto;
   }
 }
-@media (min-width: 480px) and (max-width: 720px) {
+@media (min-width: 480px) and (max-width: 800px) {
   .info-card {
     font-size: 10px;
     padding: 10px 10px 0;
@@ -300,6 +302,8 @@ body {
 @media (min-width: 720px) and (max-width: 1024px) {
   .info-card {
     font-size: 11px;
+    top: 18px;
+    left: 10px;
   }
 }
 @media (min-width: 720px) {
@@ -307,9 +311,10 @@ body {
     position: absolute;
     top: 22px;
     left: 42px;
+    border: 0;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 1024px) {
   .gmaps__card {
     top: 62px;
     left: 122px;

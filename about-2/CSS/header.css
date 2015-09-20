@@ -50,8 +50,20 @@
     margin-top: 18px;
     padding-left: 47px;
   }
-  .header__phone {
+  .header__search {
+    margin: 10px auto;
+  }
+  .header__phone,
+  .header__search {
     display: block;
+  }
+}
+@media (max-width: 720px) and (min-width: 0) {
+  .header__logo {
+    text-align: center;
+  }
+  .header__right {
+    text-align: center;
   }
 }
 @media (max-width: 1024px) and (min-width: 480px) {

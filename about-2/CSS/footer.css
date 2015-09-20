@@ -85,3 +85,13 @@
   height: 14px;
   background-position: -236px -294px;
 }
+@media (max-width: 720px) {
+  .footer__logo,
+  .footer__copyright {
+    text-align: center;
+  }
+  .footer__social {
+    margin: 20px 0;
+    text-align: center;
+  }
+}

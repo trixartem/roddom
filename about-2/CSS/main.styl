@@ -26,7 +26,8 @@ body {
     }
 
     &__creators {
-        padding-bottom: 60px
+        padding-bottom: 60px;
+
     }
 
 }
@@ -58,9 +59,10 @@ body {
 }
 
 .creators {
-    margin-top: 52px;
+    margin-top: 22px;
 
     &__item {
+        margin-top: 30px;
         text-align: center;
     }
 
@@ -103,6 +105,7 @@ body {
         background: #fff;
         border-radius: 5px;
         padding: 12px 41px;
+        border: 1px solid #e5e5e5;
     }
     &__contacts._hidden {
         display: none;
@@ -290,7 +293,7 @@ body {
     }
 }
 
-@media (min-width: 480px) and (max-width: 720px) {
+@media (min-width: 480px) and (max-width: 800px) {
     .info-card {
         font-size: 10px;
         padding: 10px 10px 0;
@@ -313,6 +316,8 @@ body {
 @media (min-width: 720px) and (max-width: 1024px) {
     .info-card {
         font-size: 11px;
+        top: 18px;
+        left: 10px;
     }
 
 }
@@ -323,11 +328,12 @@ body {
             position: absolute;
             top: 22px;
             left: 42px;
+            border: 0;
         }
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1024px) {
     .gmaps {
         &__card {
             top: 62px;

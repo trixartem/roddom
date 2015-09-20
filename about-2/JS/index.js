@@ -394,14 +394,13 @@ module.exports = function () {
                 fontWeight: 'bold'
             }
         };
-
         if (places.length === 1) {
-            new google.maps.Marker({
+            markers.push(new google.maps.Marker({
                 position: { lat: 55.74956, lng: 37.641003 },
                 map: map,
                 title: 'Hello World!',
                 icon: { url: './image/icon_maps_named.svg' }
-            });
+            }));
 
         } else {
             places.forEach(function (place, index) {
@@ -448,6 +447,14 @@ module.exports = function () {
                 })
             }
         }
+
+        var bounds = new google.maps.LatLngBounds();
+        for (var i = 0; i < markers.length; i++) {
+            console.log(markers[i].getPosition());
+            bounds.extend(markers[i].getPosition());
+        }
+        map.fitBounds(bounds);
+        $(window).on('resize', map.fitBounds.bind(map, bounds))
     }
 
 }
