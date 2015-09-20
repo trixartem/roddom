@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!--FIXME заполнить описание страницы для SEO-->
+    <meta name=”description” content=””>
+    <meta name="Keywords" content="">
+    <title></title>
+
+    <!--FIXME вставить иконку-->
+    <link href="favicon.ico">
+
+    <!--FIXME OpenGraph для соц сетей-->
+    <meta property=”og:title” content=”TITLE”/>
+    <meta property=”og:type” content=”website”/>
+    <meta property=”og:url” content=”http://site.ru">
+    <meta property=”og:image” content=”https://image.jpg">
+    <meta property=”og:description” content=”some description”/>
+
+    <meta name=”twitter:card” content=””>
+    <meta name=”twitter:title” content=””>
+    <meta name=”twitter:description” content=””>
+    <meta name=”twitter:url” content=””>
+    <!--Изображение должно быть квадратным не менее чем 60x60px-->
+    <meta name=”twitter:image” content=””>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+<header class="header container">
+    <div class="row">
+        <div class="header__left col-md-3">
+            <figure class="header__logo"><a class="link logo" href="/"></a></figure>
+        </div>
+        <div class="header__right col-md-offset-4 col-xl-offset-3">
+            <div class="header__contacts"><a href="#" class="link _cabinet">Личный кабинет</a>
+                <figure class="header__search"></figure>
+                <span class="header__phone">+7(495)321-54-76</span></div>
+            <nav class="header__menu">
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a class="menu__link " href="#">О нас</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Специалисты</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Прайс</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link _active" href="#">Расписание</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Лицензия</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Магазин</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="line"></div>
+<main class="body container">
+    <section class="body__breadcrumb">
+        <ol class="breadcrumb" style="margin-bottom: 0;">
+            <li class="active">О Нас</li>
+        </ol>
+    </section>
+    <section class="body__carousel">
+        <div id="carousel" class="carousel slide" data-interval="false">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active" data-target="0">
+                    <img src="image/carousel/1.jpg" alt="First slide [900x500]"
+                         data-holder-rendered="true">
+
+                    <div class="info-card">
+                        <header class="info-card__header">О нас</header>
+                        <div class="info-card__line"></div>
+                        <div class="info-card__text">Задача организации, в особенности же рамки и место обучения кадров
+                            требуют определения и уточнения системы обучения кадров, соответствует насущным
+                            потребностям. Разнообразный и богатый опыт постоянное информационно-пропагандистское
+                            обеспечение нашей деятельности позволяет оценить значение соответствующий условий
+                            активизации. Значимость этих проблем настолько очевидна, что реализация намеченных плановых
+                            заданий
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-target="1">
+                    <img src="image/carousel/1.jpg" alt="First slide [900x500]"
+                         data-holder-rendered="true">
+
+                    <div class="info-card_small">
+                        <header class="info-card_small__header">Уточнения системы
+                            <button type="button" data-target="#appointment"
+                                    class="btn btn-secondary btn-sm button_size_m" data-toggle="modal">Запись на прием
+                            </button>
+
+                        </header>
+                        <div class="info-card_small__line"></div>
+                        <div class="info-card_small__text">Задача организации, в особенности же рамки и место обучения
+                            кадров
+                            требуют определения и уточнения системы обучения кадров
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-target="2">
+                    <img src="image/carousel/1.jpg" alt="First slide [900x500]"
+                         data-holder-rendered="true">
+
+                    <div class="info-card">
+                        <header class="info-card__header">О нас</header>
+                        <div class="info-card__line"></div>
+                        <div class="info-card__text">Задача организации, в особенности же рамки и место обучения кадров
+                            требуют определения и уточнения системы обучения кадров, соответствует насущным
+                            потребностям. Разнообразный и богатый опыт постоянное информационно-пропагандистское
+                            обеспечение нашей деятельности позволяет оценить значение соответствующий условий
+                            активизации. Значимость этих проблем настолько очевидна, что реализация намеченных плановых
+                            заданий
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="left control" href="#carousel" role="button" data-slide="prev">
+                <span class="arrow-left" aria-hidden="true"></span>
+            </a>
+            <a class="right control" href="#carousel" role="button" data-slide="next">
+                <span class="arrow-right" aria-hidden="true"></span>
+            </a>
+        </div>
+    </section>
+    <section class="body__gallery">
+        <div class="gallery" id="gallery">
+            <div class="gallery__wrap">
+                <img data-id="0" class="gallery__item" src="image/carousel/slider-01.jpg">
+                <img data-id="1" class="gallery__item" src="image/carousel/slider-01.jpg">
+                <img data-id="2" class="gallery__item" src="image/carousel/slider-01.jpg">
+                <img class="gallery__item" src="image/carousel/slider-01.jpg">
+                <img class="gallery__item" src="image/carousel/slider-01.jpg">
+                <img class="gallery__item" src="image/carousel/slider-01.jpg">
+                <img class="gallery__item" src="image/carousel/slider-01.jpg">
+                <img class="gallery__item" src="image/carousel/slider-01.jpg">
+            </div>
+        </div>
+    </section>
+    <section class="body__maps col-xl-12">
+        <figure class="gmaps">
+            <div class="gmaps__map" id="map"></div>
+            <section class="gmaps__card">
+                <div class="gmaps__select">
+                    <div class="select-map">
+                        <button class="select-map__button"><span class="select-map__text">Филиал #1</span><span
+                                class="select-map__arrow">›</span></button>
+                        <div class="select-map__dropdown">
+                            <div class="select-map__item selected" data-value="1">Филиал #1</div>
+                            <div class="select-map__item" data-value="2">Филиал #2</div>
+                            <div class="select-map__item" data-value="3">Филиал #3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gmaps__contacts">
+                    <div class="gmaps__address">
+                        <div class="gmaps__header">Адрес:</div>
+                        <div class="gmaps__text">123321, г. Москва,<br>ул. Проспектная, д. 15</div>
+                    </div>
+                    <div class="gmaps__address _lines">
+                        <div class="gmaps__header">Режим работы:</div>
+                        <table class="gmaps__table">
+                            <tr>
+                                <td>Пн-пт:</td>
+                                <td>11:00 &ndash; 20:00</td>
+                            </tr>
+                            <tr>
+                                <td>Вс:</td>
+                                <td>11:00 &ndash; 18:00</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gmaps__address">
+                        <div class="gmaps__header">Телефон, почта</div>
+                        <div class="gmaps__text">+7 (495) 543-80-70,<br>info@tbp.ru</div>
+                    </div>
+                </div>
+                <div class="gmaps__contacts _hidden">
+                    <div class="gmaps__address">
+                        <div class="gmaps__header">Адрес:</div>
+                        <div class="gmaps__text">123321, г. Москва,<br>ул. Ленина, д. 15</div>
+                    </div>
+                    <div class="gmaps__address _lines">
+                        <div class="gmaps__header">Режим работы:</div>
+                        <table class="gmaps__table">
+                            <tr>
+                                <td>Пн-пт:</td>
+                                <td>11:00 &ndash; 20:00</td>
+                            </tr>
+                            <tr>
+                                <td>Вс:</td>
+                                <td>11:00 &ndash; 18:00</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gmaps__address">
+                        <div class="gmaps__header">Телефон, почта</div>
+                        <div class="gmaps__text">+7 (495) 543-80-70,<br>info@tbp.ru</div>
+                    </div>
+                </div>
+                <div class="gmaps__contacts _hidden">
+                    <div class="gmaps__address">
+                        <div class="gmaps__header">Адрес:</div>
+                        <div class="gmaps__text">123321, г. Москва,<br>ул. Бажова, д. 15</div>
+                    </div>
+                    <div class="gmaps__address _lines">
+                        <div class="gmaps__header">Режим работы:</div>
+                        <table class="gmaps__table">
+                            <tr>
+                                <td>Пн-пт:</td>
+                                <td>11:00 &ndash; 20:00</td>
+                            </tr>
+                            <tr>
+                                <td>Вс:</td>
+                                <td>11:00 &ndash; 18:00</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gmaps__address">
+                        <div class="gmaps__header">Телефон, почта</div>
+                        <div class="gmaps__text">+7 (495) 543-80-70,<br>info@tbp.ru</div>
+                    </div>
+                </div>
+            </section>
+
+        </figure>
+    </section>
+    <section class=" body__creators creators">
+        <h2 class="sub-header creators__title">Создатели</h2>
+
+        <div class="row">
+            <div class="creators__item col-md-4">
+                <div class="creators__img">
+                    <img class="creators__img" src="image/doctor1.jpg" title="Иванов Виктор Сергеевич">
+                </div>
+
+                <div class="creators__post">Главный директор</div>
+                <div class="creators__name">Иванов<br>Виктор Сергеевич</div>
+                <div class="creators__text">Зенитное часовое число иллюстрирует ионный хвост – север вверху, восток
+                    слева. Скоpость кометы в пеpигелии, оценивая блеск освещенного металического шарика, ищет
+                    популяционный индекс. Популяционный индекс, несмотря на внешние воздействия, выслеживает Каллисто.
+                </div>
+            </div>
+            <div class="creators__item col-md-4">
+                <img class="creators__img" src="image/doctor2.jpg" title="Замятина Анна Владимировна">
+
+                <div class="creators__post">Директор</div>
+                <div class="creators__name">Замятина<br>Анна Владимировна</div>
+                <div class="creators__text">Зенитное часовое число иллюстрирует ионный хвост – север вверху, восток
+                    слева. Скоpость кометы в пеpигелии.
+                </div>
+            </div>
+            <div class="creators__item col-md-4">
+                <img class="creators__img" src="image/doctor1.jpg" title="Иванов Виктор Сергеевич">
+
+                <div class="creators__post">Главный директор</div>
+                <div class="creators__name">Иванов<br>Виктор Сергеевич</div>
+                <div class="creators__text">Зенитное часовое число иллюстрирует ионный хвост – север вверху, восток
+                    слева. Скоpость кометы в пеpигелии, оценивая блеск освещенного металического шарика, ищет
+                    популяционный индекс. Популяционный индекс, несмотря на внешние воздействия, выслеживает Каллисто.
+                    Зенитное часовое число иллюстрирует ионный хвост – север вверху, восток
+                    слева. Скоpость кометы в пеpигелии, оценивая блеск освещенного металического шарика, ищет
+                    популяционный индекс. Популяционный индекс, несмотря на внешние воздействия, выслеживает Каллисто.
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<div class="line"></div>
+<footer class="footer container">
+    <div class="row">
+        <div class="footer__left col-md-3">
+            <figure class="footer__logo"><a class="link logo" href="/"></a></figure>
+            <div class="footer__copyright">To Be Parents. Все права защещены. 2015&copy;</div>
+        </div>
+        <div class="footer__right col-xl-offset-8 col-md-offset-6">
+            <div class="row">
+                <div class="col-xs-3">
+                    <a class="link map__r1" href="#">Специалисты</a>
+
+                    <div class="map__group">
+                        <a class="link map__r2" href="#">Ссылка1</a>
+                        <a class="link map__r2" href="#">Специалисты</a>
+                        <a class="link map__r2" href="#">Ссылка3</a>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <a class="link map__r1" href="#">Здесь</a>
+
+                    <div class="map__group">
+                        <a class="link map__r2" href="#">Ссылка1</a>
+                        <a class="link map__r2" href="#">Расписание</a>
+                        <a class="link map__r2" href="#">Ссылка3</a>
+                    </div>
+                    </a></div>
+                <div class="col-xs-3"><a class="link map__r1" href="#"><a class="link map__r1" href="#">Здесь</a>
+
+                    <div class="map__group">
+                        <a class="link map__r2" href="#">Ссылка1</a>
+                        <a class="link map__r2" href="#">О нас</a>
+                        <a class="link map__r2" href="#">Ссылка3</a>
+                    </div>
+                </a></div>
+                <div class="col-xs-3"><a class="link map__r1" href="#"><a class="link map__r1" href="#">Здесь</a>
+
+                    <div class="map__group">
+                        <a class="link map__r2" href="#">Ссылка1</a>
+                        <a class="link map__r2" href="#">Ссылка2</a>
+                        <a class="link map__r2" href="#">Ссылка3</a>
+                    </div>
+                </a></div>
+            </div>
+            <div class="footer__social">
+                <span class="social__text">Мы в соцсетях:</span>
+                <span class="social__item social__facebook"></span>
+                <span class="social__item social__twitter"></span>
+                <span class="social__item social__youtube"></span>
+                <span class="social__item social__rss"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="appointment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Запись на прием</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <div class="form-group">
+                        <label for="name" class="control-label">Тема лекции/специалист:</label>
+                        <input type="text" class="form-control" required placeholder="Введите имя специалиста"
+                               id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-name" class="control-label">Фамили Имя Отчество:</label>
+                        <input type="text" class="form-control" required id="client-name"
+                               placeholder="Ваше Фамили Имя Отчество">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <label for="date" class="control-label">Дата:</label>
+                                <input type="date" class="form-control" required id="date" placeholder="Дата записи">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="time" class="control-label">Время:</label>
+                                <input type="time" class="form-control" required id="time" placeholder="Время">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="control-label">Ваш номер телефона:</label>
+                        <input type="phone" class="form-control" required id="phone" placeholder="+7(495)1231212">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment" class="control-label">Комментарий:</label>
+                        <textarea class="form-control" id="comment"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Отмена</button>
+                <button type="button" disabled id="submit-form" class="btn btn-primary btn-sm" type="submit">
+                    Записаться
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="JS/iscroll.js"></script>
+<script src="JS/index.js"></script>
+<script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7png4T0hdBFqJ40gtLkfHH6vkvI-Vh-k&callback=initMap"></script>
+</body>
+</html>
