@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <!--FIXME заполнить описание страницы для SEO-->
-    <meta name=”description” content=””>
-    <meta name="Keywords" content="">
-    <title></title>
+    <meta name=”description” content=”Цель и краткая история создания центра подготовки к родам по методике французского акушера-гинеколога Мишеля Одена, а также руководство центра.”>
+    <meta name="Keywords" content="о центре для беременных, руководство To Be Parents">
+    <title>О центре To Be Parents</title>
 
     <!--FIXME вставить иконку-->
     <link href="favicon.ico">
@@ -32,19 +31,19 @@
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
-<header class="header container">
+<header class="header b-container">
     <div class="row">
-        <div class="header__left col-md-3">
+        <div class="header__left col-xs-3">
             <figure class="header__logo"><a class="link logo" href="/"></a></figure>
         </div>
-        <div class="header__right col-md-offset-4 col-xl-offset-3">
+        <div class="header__right col-xs-offset-3">
             <div class="header__contacts"><a href="#" class="link _cabinet">Личный кабинет</a>
                 <figure class="header__search"></figure>
                 <span class="header__phone">+7(495)321-54-76</span></div>
             <nav class="header__menu">
                 <ul class="menu">
                     <li class="menu__item">
-                        <a class="menu__link " href="#">О нас</a>
+                        <a class="menu__link _active" href="#">О нас</a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__link" href="#">Специалисты</a>
@@ -53,7 +52,7 @@
                         <a class="menu__link" href="#">Прайс</a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link _active" href="#">Расписание</a>
+                        <a class="menu__link" href="#">Расписание</a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__link" href="#">Лицензия</a>
@@ -67,7 +66,7 @@
     </div>
 </header>
 <div class="line"></div>
-<main class="body container">
+<main class="body b-container">
     <section class="body__breadcrumb">
         <ol class="breadcrumb" style="margin-bottom: 0;">
             <li class="active">О Нас</li>
@@ -127,12 +126,8 @@
                     </div>
                 </div>
             </div>
-            <a class="left control" href="#carousel" role="button" data-slide="prev">
-                <span class="arrow-left" aria-hidden="true"></span>
-            </a>
-            <a class="right control" href="#carousel" role="button" data-slide="next">
-                <span class="arrow-right" aria-hidden="true"></span>
-            </a>
+            <a class="left control" href="#carousel" role="button" data-slide="prev"><span class="arrow-left" aria-hidden="true"></span></a>
+            <a class="right control" href="#carousel" role="button" data-slide="next"><span class="arrow-right" aria-hidden="true"></span></a>
         </div>
     </section>
     <section class="body__gallery">
@@ -149,7 +144,7 @@
             </div>
         </div>
     </section>
-    <section class="body__maps col-xl-12">
+    <section class="body__maps col-xs-12">
         <figure class="gmaps">
             <div class="gmaps__map" id="map"></div>
             <section class="gmaps__card">
@@ -241,7 +236,7 @@
         <h2 class="sub-header creators__title">Создатели</h2>
 
         <div class="row">
-            <div class="creators__item col-md-4">
+            <div class="creators__item col-xs-4">
                 <div class="creators__img">
                     <img class="creators__img" src="image/doctor1.jpg" title="Иванов Виктор Сергеевич">
                 </div>
@@ -253,7 +248,7 @@
                     популяционный индекс. Популяционный индекс, несмотря на внешние воздействия, выслеживает Каллисто.
                 </div>
             </div>
-            <div class="creators__item col-md-4">
+            <div class="creators__item col-xs-4">
                 <img class="creators__img" src="image/doctor2.jpg" title="Замятина Анна Владимировна">
 
                 <div class="creators__post">Директор</div>
@@ -262,7 +257,7 @@
                     слева. Скоpость кометы в пеpигелии.
                 </div>
             </div>
-            <div class="creators__item col-md-4">
+            <div class="creators__item col-xs-4">
                 <img class="creators__img" src="image/doctor1.jpg" title="Иванов Виктор Сергеевич">
 
                 <div class="creators__post">Главный директор</div>
@@ -279,13 +274,13 @@
     </section>
 </main>
 <div class="line"></div>
-<footer class="footer container">
+<footer class="footer b-container">
     <div class="row">
-        <div class="footer__left col-md-3">
+        <div class="footer__left col-xs-3">
             <figure class="footer__logo"><a class="link logo" href="/"></a></figure>
             <div class="footer__copyright">To Be Parents. Все права защещены. 2015&copy;</div>
         </div>
-        <div class="footer__right col-xl-offset-8 col-md-offset-6">
+        <div class="footer__right col-xs-offset-8">
             <div class="row">
                 <div class="col-xs-3">
                     <a class="link map__r1" href="#">Специалисты</a>
@@ -356,11 +351,11 @@
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-sm-8">
+                            <div class="col-xs-8">
                                 <label for="date" class="control-label">Дата:</label>
                                 <input type="date" class="form-control" required id="date" placeholder="Дата записи">
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-xs-4">
                                 <label for="time" class="control-label">Время:</label>
                                 <input type="time" class="form-control" required id="time" placeholder="Время">
                             </div>

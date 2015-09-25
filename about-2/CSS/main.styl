@@ -102,6 +102,9 @@ body {
     }
 
     &__card {
+        position: absolute;
+        top: 60px;
+        left: 80px;
         background: #fff;
         border-radius: 5px;
         padding: 12px 41px;
@@ -217,6 +220,12 @@ body {
         position: absolute;
         top: 50%;
         margin-top: -15px;
+        &.left,
+        &.right {
+            line-height: 0;
+            border-radius: 50%;
+            background: #fff;
+        }
         &.left {
             left: -19px;
         }
@@ -229,6 +238,11 @@ body {
         width: 44px;
         height: 44px;
         display: inline-block;
+        opacity: 1;
+        transition: opacity .2s ease;
+        &:hover {
+            opacity: .6;
+        }
     }
 
     & .arrow-left {
@@ -245,7 +259,7 @@ body {
     top: 70px;
     left: 50px;
     width: 488px;
-    padding: 28px 26px;
+    padding: 3px 26px 26px;
     font-size: 14px;
     &__text {
         max-height: 237px;
@@ -256,7 +270,6 @@ body {
     &__header {
         font-size: 3em;
         color: #37b39c;
-        margin-top: -58px;
         &:after {
             content: '';
             margin-bottom: 20px;
@@ -266,92 +279,6 @@ body {
         }
     }
 
-}
-
-@media (min-width: 0) and (max-width: 480px) {
-    .info-card {
-        font-size: 10px;
-        padding: 10px 10px 0;
-        border-radius: 5px;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        width: auto;
-        opacity: .9;
-        &__header {
-            font-size: 2em;
-            margin-top: 0;
-            &::after {
-                margin-bottom: 6px;
-            }
-        }
-        &__text {
-            max-height: 100%;
-            overflow: auto;
-        }
-    }
-}
-
-@media (min-width: 480px) and (max-width: 800px) {
-    .info-card {
-        font-size: 10px;
-        padding: 10px 10px 0;
-        top: 18px;
-        left: 10px;
-        width: auto;
-        right: 10px;
-        &__header {
-            margin-top: -37px;
-            &::after {
-                margin-bottom: 6px;
-            }
-        }
-        &__text {
-            min-height: 112px;
-        }
-    }
-}
-
-@media (min-width: 720px) and (max-width: 1024px) {
-    .info-card {
-        font-size: 11px;
-        top: 18px;
-        left: 10px;
-    }
-
-}
-
-@media (min-width: 720px) {
-    .gmaps {
-        &__card {
-            position: absolute;
-            top: 22px;
-            left: 42px;
-            border: 0;
-        }
-    }
-}
-
-@media (min-width: 1024px) {
-    .gmaps {
-        &__card {
-            top: 62px;
-            left: 122px;
-        }
-    }
-}
-
-@media (min-width: 800px) {
-    .info-card {
-        font-size: 12px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .info-card {
-        font-size: 14px;
-    }
 }
 
 .info-card_small {
@@ -388,30 +315,6 @@ body {
 
 }
 
-@media (min-width: 0) and (max-width: 720px) {
-    .info-card_small {
-        left: 0;
-        bottom: 0;
-        top: 0;
-        width: 100%;
-        padding: 12px 15px 10px 27px;
-        font-size: 14px;
-        background: rgba(255, 255, 255, .9);
-        & .button_size_m {
-            float: none;
-            margin-top: 5px;
-        }
-        &__header {
-            font-size: 1.4em;
-            line-height: .7em;
-            &:after {
-                content: '';
-                margin-bottom: 5px;
-                margin-top: 8px;
-            }
-        }
-    }
-}
 
 .button_size_m {
     border: 1px solid;
@@ -468,6 +371,12 @@ body {
     background: #9d9d9c !important;
     border-radius: 0 !important;
 
+}
+
+.b-container {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 0 .9375rem;
 }
 
 
