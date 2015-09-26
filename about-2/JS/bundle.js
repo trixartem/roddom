@@ -9,6 +9,8 @@ function scroll() {
         mouseWheel: true,
         scrollbars: true,
         bounce: false,
+        click: true,
+        tap: true,
         scrollX: true
     });
 }
