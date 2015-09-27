@@ -13,18 +13,22 @@ function scroll() {
         tap: true,
         scrollX: true
     });
+    return myScroll;
 }
-document.addEventListener('DOMContentLoaded', scroll, false);
-var items = [];
-$('.carousel-item').each(function (key, item) {
-    var $item = $(item);
-    var target = Number($item.data('target'))
-    if (target || target === 0) {
-        items[target] = key;
-    }
-})
-var carousel = $('#carousel');
-$('.gallery__item').click(function () {
-    var id = $(this).data('id');
-    carousel.carousel(items[id])
-})
+document.addEventListener('DOMContentLoaded', function () {
+    var myScroll = scroll();
+    var items = [];
+    $('.carousel-item').each(function (key, item) {
+        var $item = $(item);
+        var target = Number($item.data('target'))
+        if (target || target === 0) {
+            items[target] = key;
+        }
+    })
+    var carousel = $('#carousel');
+    $('.gallery__item').click(function () {
+        var id = $(this).data('id');
+        carousel.carousel(items[id])
+        myScroll.scrollToElement(this, 700, null, null, IScroll.utils.ease.quadratic);
+    })
+}, false);

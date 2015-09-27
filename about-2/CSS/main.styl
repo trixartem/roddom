@@ -297,10 +297,12 @@ body {
         line-height: 1.6em;
     }
     &__header {
-        white-space: nowrap;
         font-size: 1.8em;
         line-height: .8em;
         color: #37b39c;
+        &-text {
+            line-height: 24px;
+        }
         &:after {
             content: '';
             margin-bottom: 9px;
@@ -311,6 +313,7 @@ body {
         }
     }
     & .button_size_m {
+        float: right;
     }
 
 }

@@ -365,10 +365,12 @@ body {
   line-height: 1.6em;
 }
 .info-card_small__header {
-  white-space: nowrap;
   font-size: 1.8em;
   line-height: 0.8em;
   color: #37b39c;
+}
+.info-card_small__header-text {
+  line-height: 24px;
 }
 .info-card_small__header:after {
   content: '';
@@ -377,6 +379,9 @@ body {
   display: block;
   width: 100%;
   border: 1px dashed #d5d5d5;
+}
+.info-card_small .button_size_m {
+  float: right;
 }
 .button_size_m {
   border: 1px solid;
