@@ -47,52 +47,7 @@
 }
 .line {
   border-top: 1px solid #d5d5d5;
-}
-@media (max-width: 480px) {
-  .logo {
-    text-align: left;
-  }
-  .logo img {
-    width: auto;
-  }
-  .header__right {
-    text-align: left;
-  }
-  .header__contacts {
-    margin-top: 18px;
-    padding-left: 47px;
-  }
-  .header__search {
-    margin: 10px auto;
-  }
-  .header__phone,
-  .header__search {
-    display: block;
-  }
-}
-@media (max-width: 720px) and (min-width: 0) {
-  .header__logo {
-    text-align: center;
-  }
-  .header__right {
-    text-align: center;
-  }
-}
-@media (max-width: 1024px) and (min-width: 480px) {
-  .header__contacts {
-    margin-top: 18px;
-  }
-  .header__menu {
-    margin-top: 7px;
-  }
-  .logo img {
-    width: 180px;
-  }
-}
-@media (min-width: 800px) {
-  .logo img {
-    width: auto;
-  }
+  min-width: 1024px;
 }
 .menu__link {
   padding: 0.49em 0.8rem;
@@ -119,12 +74,6 @@
 .menu__item {
   line-height: 2.7rem;
   display: inline-block;
-}
-@media (max-width: 480px) {
-  .menu__item {
-    line-height: 2.7rem;
-    display: block;
-  }
 }
 body {
   color: #535353;
@@ -241,7 +190,7 @@ body {
 }
 .icon__messages {
   background-position: 230px -417px;
-  width: 13px;
+  width: 14px;
   cursor: pointer;
   text-decoration: none;
   -webkit-transition: opacity 0.2s ease-out;
@@ -290,11 +239,13 @@ body {
 .article__link {
   font-style: italic;
   color: #40ccb1;
-  -webkit-transition: color 0.2s ease;
-          transition: color 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease;
+  opacity: 1;
 }
 .article__link:hover {
-  color: #49ffe3;
+  color: #40ccb1;
+  opacity: 0.6;
   text-decoration: none;
 }
 .article__header {
@@ -369,6 +320,103 @@ body {
 .article__buttons .icon {
   margin: 0 auto;
 }
+.b-container {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+.comments {
+  border: 1px solid #ececec;
+  border-radius: 3px;
+}
+.comments__head {
+  padding: 7px 19px 5px;
+  border-bottom: 1px solid #ececec;
+  font-size: 17px;
+}
+.comments__header {
+  color: #00b59e;
+  font-size: 17px;
+}
+.comments__button {
+  float: right;
+  color: #8e8e8e;
+  font-style: italic;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease;
+}
+.comments__button:hover {
+  opacity: 0.6;
+  color: #8e8e8e;
+}
+.comments__list {
+  padding: 26px 21px;
+}
+.comment__body .comment {
+  border-top: 1px solid #ececec;
+  margin-top: 10px;
+  padding-top: 17px;
+}
+.comment__avatar {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  float: left;
+  border: 1px solid #c6cbca;
+  margin-right: 15px;
+}
+.comment__avatar._type-child {
+  background: url("../image/avatars/1.jpg");
+}
+.comment__body {
+  padding-left: 53px;
+}
+.comment__header {
+  margin-bottom: 3px;
+  padding-right: 21px;
+  position: relative;
+}
+.comment__name {
+  font-size: 17px;
+  max-width: 69%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  line-height: 17px;
+  color: #5b5b5b;
+  font-weight: 400;
+}
+.comment__date {
+  float: right;
+  font-size: 10px;
+  font-style: italic;
+  color: #717171;
+}
+.comment__reply-to {
+  position: absolute;
+  right: -11px;
+  width: 20px;
+  height: 17px;
+  top: 0;
+  background: url("../image/icons.svg") 208px -477px;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease;
+}
+.comment__reply-to:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.comment__text {
+  font-size: 12px;
+  line-height: 14px;
+  padding-right: 21px;
+}
 .footer {
   background: url("../image/footer-bg.jpg") 43% 100% no-repeat;
   height: 277px;
@@ -388,11 +436,6 @@ body {
 }
 .footer__social {
   text-align: right;
-}
-@media (max-width: 1024px) {
-  .footer {
-    background: none;
-  }
 }
 .map__r1,
 .map__r2 {
@@ -455,16 +498,6 @@ body {
   width: 15px;
   height: 14px;
   background-position: -236px -294px;
-}
-@media (max-width: 720px) {
-  .footer__logo,
-  .footer__copyright {
-    text-align: center;
-  }
-  .footer__social {
-    margin: 20px 0;
-    text-align: center;
-  }
 }
 body {
   font-weight: 300;

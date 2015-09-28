@@ -18,11 +18,6 @@
 .footer__social {
   text-align: right;
 }
-@media (max-width: 1024px) {
-  .footer {
-    background: none;
-  }
-}
 .map__r1,
 .map__r2 {
   font-size: 13px;
@@ -84,14 +79,4 @@
   width: 15px;
   height: 14px;
   background-position: -236px -294px;
-}
-@media (max-width: 720px) {
-  .footer__logo,
-  .footer__copyright {
-    text-align: center;
-  }
-  .footer__social {
-    margin: 20px 0;
-    text-align: center;
-  }
 }

@@ -24,9 +24,3 @@
   line-height: 2.7rem;
   display: inline-block;
 }
-@media (max-width: 480px) {
-  .menu__item {
-    line-height: 2.7rem;
-    display: block;
-  }
-}

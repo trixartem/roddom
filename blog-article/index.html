@@ -11,7 +11,7 @@
     <title></title>
 
     <!--FIXME вставить иконку-->
-    <link href="favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <!--FIXME OpenGraph для соц сетей-->
     <meta property=”og:title” content=”TITLE”/>
@@ -33,19 +33,19 @@
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
-<header class="header container">
+<header class="header b-container">
     <div class="row">
-        <div class="header__left col-md-3">
+        <div class="header__left col-xs-3">
             <figure class="header__logo"><a class="link logo" href="/"></a></figure>
         </div>
-        <div class="header__right col-md-offset-4 col-xl-offset-3">
+        <div class="header__right col-xs-offset-3">
             <div class="header__contacts"><a href="#" class="link _cabinet">Личный кабинет</a>
                 <figure class="header__search"></figure>
                 <span class="header__phone">+7(495)321-54-76</span></div>
             <nav class="header__menu">
                 <ul class="menu">
                     <li class="menu__item">
-                        <a class="menu__link " href="#">О нас</a>
+                        <a class="menu__link _active" href="#">О нас</a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__link" href="#">Специалисты</a>
@@ -54,7 +54,7 @@
                         <a class="menu__link" href="#">Прайс</a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link _active" href="#">Расписание</a>
+                        <a class="menu__link" href="#">Расписание</a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__link" href="#">Лицензия</a>
@@ -68,7 +68,7 @@
     </div>
 </header>
 <div class="line"></div>
-<main class="body container">
+<main class="body b-container">
     <section class="body__breadcrumb">
         <ol class="breadcrumb" style="margin-bottom: 0;">
             <li class="active"><a class="breadcrumb__link" href="#">Главная</a></li>
@@ -81,6 +81,7 @@
             <article class="article">
                 <div class="article__title-image">
                     <img src="http://placehold.it/682x382/aaab38/aaab38/">
+
                     <div class="article__title">
                         <div class="article__title-other">
                             <a href="#" class="article__title-link">Рубрика</a>
@@ -115,7 +116,8 @@
                 <div class="article__text">
                     Авторитаризм сохраняет онтологический континентально-европейский тип политической культуры. Правовое
                     государство важно символизирует тоталитарный тип политической культуры, о чем будет подробнее
-                    сказано ниже. <a href="#" class="article__link">Правовое государство, однако</a>, вызывает плюралистический коммунизм. Политическая
+                    сказано ниже. <a href="#" class="article__link">Правовое государство, однако</a>, вызывает
+                    плюралистический коммунизм. Политическая
                     система, особенно в условиях политической нестабильности, приводит социализм. Один из
                     основоположников теории социализации Г.Тард писал, что постиндустриализм представляет собой феномен
                     толпы. Разновидность тоталитаризма неоднозначна.
@@ -143,6 +145,60 @@
                     толпы. Разновидность тоталитаризма неоднозначна.
                 </div>
             </article>
+            <section class="comments" data-maxlevel="3">
+                <header class="comments__head">
+                    <span class="comments__header">Комментарии</span>
+                    <a class="comments__button">Комментировать</a>
+                </header>
+                <section class="comments__list">
+                    <article class="comment" data-level="0">
+                        <div class="comment__avatar _type-child"></div>
+                        <div class="comment__body">
+                            <div class="comment__header">
+                                <div class="comment__name" title="Ann фывдлаф жыдльа фдлывь жадфльыжвдалфьждывльажфдлыь">Ann фывдлаф жыдльа фдлывь жадфльыжвдалфьждывльажфдлыь</div>
+                                <time class="comment__date">01 июля 2015 года 19:10</time>
+                                <div class="comment__reply-to" title="ответить"></div>
+                            </div>
+                            <div class="comment__text">Авторитаризм сохраняет онтологический континентально-европейский
+                                тип политической культуры. Правовое
+                                государство важно символизирует тоталитарный тип политической культуры, о чем будет
+                                подробнее
+                                сказано ниже. Правовое государство, однако, вызывает плюралистический коммунизм.
+                                Политическая
+                                система, особенно в условиях политической нестабильности, приводит социализм. Один из
+                                основоположников теории социализации Г.Тард писал, что постиндустриализм представляет
+                                собой феномен
+                                толпы. Разновидность тоталитаризма неоднозначна.
+                            </div>
+                            <article class="comment" data-level="1">
+                                <div class="comment__avatar"></div>
+                                <div class="comment__body">
+                                    <div class="comment__header">
+                                        <div class="comment__name">Ann фывдлаф жыдльа фдлывь жадфльыжвдалфьждывльажфдлыь
+                                        </div>
+                                        <time class="comment__date">01 июля 2015 года 19:10</time>
+                                        <div class="comment__reply-to"></div>
+                                    </div>
+                                    <div class="comment__text">Авторитаризм сохраняет онтологический
+                                        континентально-европейский
+                                        тип политической культуры. Правовое
+                                        государство важно символизирует тоталитарный тип политической культуры, о чем будет
+                                        подробнее
+                                        сказано ниже. Правовое государство, однако, вызывает плюралистический коммунизм.
+                                        Политическая
+                                        система, особенно в условиях политической нестабильности, приводит социализм. Один
+                                        из
+                                        основоположников теории социализации Г.Тард писал, что постиндустриализм
+                                        представляет
+                                        собой феномен
+                                        толпы. Разновидность тоталитаризма неоднозначна.
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </article>
+                </section>
+            </section>
         </div>
         <aside class="right media-right">
             <section class="body__share">
@@ -187,13 +243,13 @@
     </div>
 </main>
 <div class="line"></div>
-<footer class="footer container">
+<footer class="footer b-container">
     <div class="row">
-        <div class="footer__left col-md-3">
+        <div class="footer__left col-xs-3">
             <figure class="footer__logo"><a class="link logo" href="/"></a></figure>
             <div class="footer__copyright">To Be Parents. Все права защещены. 2015&copy;</div>
         </div>
-        <div class="footer__right col-xl-offset-8 col-md-offset-6">
+        <div class="footer__right col-xs-offset-8">
             <div class="row">
                 <div class="col-xs-3">
                     <a class="link map__r1" href="#">Специалисты</a>

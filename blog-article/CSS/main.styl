@@ -130,7 +130,7 @@ body {
     }
     &__messages {
         background-position: 230px -417px;
-        width: 13px;
+        width: 14px;
         cursor: pointer;
         text-decoration: none;
         &:hover {
@@ -180,9 +180,11 @@ body {
     &__link {
         font-style: italic;
         color: #40ccb1;
-        transition: color .2s ease;
+        transition: opacity .2s ease;
+        opacity: 1;
         &:hover {
-            color: #49ffe3;
+            color: #40ccb1;
+            opacity: .6;
             text-decoration: none
         }
     }
@@ -263,4 +265,103 @@ body {
 
 }
 
+.b-container {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 0 .9375rem;
+}
+
+.comments {
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    &__head {
+        padding: 7px 19px 5px;
+        border-bottom: 1px solid #ececec;
+        font-size: 17px;
+    }
+    &__header {
+        color: #00b59e;
+        font-size: 17px;
+    }
+    &__button {
+        float: right;
+        color: #8e8e8e;
+        font-style: italic;
+        font-size: 14px;
+        text-decoration: underline;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity .2s ease;
+        &:hover {
+            opacity: .6;
+            color: #8e8e8e;
+        }
+    }
+    &__list {
+        padding: 26px 21px;
+    }
+}
+
+.comment {
+    &__body & {
+        border-top: 1px solid #ececec;
+        margin-top: 10px;
+        padding-top: 17px;
+    }
+    &__avatar {
+        &._type-child {
+            background: url(../image/avatars/1.jpg)
+        }
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        float: left;
+        border: 1px solid #c6cbca;
+        margin-right: 15px;
+    }
+    &__body {
+        padding-left: 53px;
+    }
+    &__header {
+        margin-bottom: 3px;
+        padding-right: 21px;
+        position: relative;
+    }
+    &__name {
+        font-size: 17px;
+        max-width: 69%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        line-height: 17px;
+        color: #5b5b5b;
+        font-weight: 400;
+    }
+    &__date {
+        float: right;
+        font-size: 10px;
+        font-style: italic;
+        color: #717171;
+    }
+    &__reply-to {
+        position: absolute;
+        right: -11px;
+        width: 20px;
+        height: 17px;
+        top: 0;
+        background: url(../image/icons.svg) 208px -477px;
+        opacity: 1;
+        transition: opacity .2s ease;
+        &:hover {
+            opacity: .6;
+            cursor: pointer
+        }
+    }
+    &__text {
+        font-size: 12px;
+        line-height: 14px;
+        padding-right: 21px;
+    }
+}
 
