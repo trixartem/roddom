@@ -8,17 +8,16 @@
     <!--FIXME заполнить описание страницы для SEO-->
     <meta name=”description” content=””>
     <meta name="Keywords" content="">
-    <title></title>
+    <title>Заголовок</title>
 
-    <!--FIXME вставить иконку-->
     <link rel="icon" href="favicon.ico">
 
     <!--FIXME OpenGraph для соц сетей-->
-    <meta property=”og:title” content=”TITLE”/>
+    <meta property=”og:title” content=”Заголовок”/>
     <meta property=”og:type” content=”website”/>
-    <meta property=”og:url” content=”http://site.ru">
+    <meta property=”og:url” content="https://yandex.ru">
     <meta property=”og:image” content=”https://image.jpg">
-    <meta property=”og:description” content=”some description”/>
+    <meta property=”og:description” content=”Описание статьи”/>
 
     <meta name=”twitter:card” content=””>
     <meta name=”twitter:title” content=””>
@@ -105,7 +104,7 @@
                                     <span title="Число просмотров" class="icon__view"></span>
                                     <span class="icon__counter">1923</span>
                                 </span>
-                                <span class="icon__item">
+                                <span class="icon__item _popover" data-toggle="popover" data-title="title" data-img="http://img.ru" data-desc="desc" data-url="yandex.ru">
                                     <span title="Поделиться" class="icon__share"></span>
                                 </span>
                                 </div>
@@ -145,7 +144,13 @@
                     толпы. Разновидность тоталитаризма неоднозначна.
                 </div>
             </article>
-            <section class="comments" data-maxlevel="3">
+            <section class="share-wrapper">
+                <div class="share-wrapper__container">
+                    <div class="share _init"></div><span data-placement="right" data-toggle="popover" id="share-more" title="Показать больше соцсетей" class="share__link _more"></span>
+                </div>
+                <div class="share-wrapper__header">Поделиться</div>
+            </section>
+            <section class="comments" data-maxlevel="2" id="comments">
                 <header class="comments__head">
                     <span class="comments__header">Комментарии</span>
                     <a class="comments__button">Комментировать</a>
@@ -155,7 +160,9 @@
                         <div class="comment__avatar _type-child"></div>
                         <div class="comment__body">
                             <div class="comment__header">
-                                <div class="comment__name" title="Ann фывдлаф жыдльа фдлывь жадфльыжвдалфьждывльажфдлыь">Ann фывдлаф жыдльа фдлывь жадфльыжвдалфьждывльажфдлыь</div>
+                                <div class="comment__name"
+                                     title="Ann">Ann
+                                </div>
                                 <time class="comment__date">01 июля 2015 года 19:10</time>
                                 <div class="comment__reply-to" title="ответить"></div>
                             </div>
@@ -170,33 +177,64 @@
                                 собой феномен
                                 толпы. Разновидность тоталитаризма неоднозначна.
                             </div>
-                            <article class="comment" data-level="1">
-                                <div class="comment__avatar"></div>
-                                <div class="comment__body">
-                                    <div class="comment__header">
-                                        <div class="comment__name">Ann фывдлаф жыдльа фдлывь жадфльыжвдалфьждывльажфдлыь
+                            <div class="comment__content">
+                                <article class="comment" data-level="1">
+                                    <div class="comment__avatar _type-women"></div>
+                                    <div class="comment__body">
+                                        <div class="comment__header">
+                                            <div class="comment__name" title="Ann">Ann</div>
+                                            <time class="comment__date">01 июля 2015 года 19:10</time>
+                                            <div class="comment__reply-to"></div>
                                         </div>
-                                        <time class="comment__date">01 июля 2015 года 19:10</time>
-                                        <div class="comment__reply-to"></div>
+                                        <div class="comment__text">Авторитаризм сохраняет онтологический
+                                            континентально-европейский
+                                            тип политической культуры. Правовое
+                                            государство важно символизирует тоталитарный тип политической культуры, о
+                                            чем будет
+                                            подробнее
+                                            сказано ниже. Правовое государство, однако, вызывает плюралистический
+                                            коммунизм.
+                                            Политическая
+                                            система, особенно в условиях политической нестабильности, приводит
+                                            социализм. Один
+                                            из
+                                            основоположников теории социализации Г.Тард писал, что постиндустриализм
+                                            представляет
+                                            собой феномен
+                                            толпы. Разновидность тоталитаризма неоднозначна.
+                                        </div>
+                                        <div class="comment__content"></div>
                                     </div>
-                                    <div class="comment__text">Авторитаризм сохраняет онтологический
-                                        континентально-европейский
-                                        тип политической культуры. Правовое
-                                        государство важно символизирует тоталитарный тип политической культуры, о чем будет
-                                        подробнее
-                                        сказано ниже. Правовое государство, однако, вызывает плюралистический коммунизм.
-                                        Политическая
-                                        система, особенно в условиях политической нестабильности, приводит социализм. Один
-                                        из
-                                        основоположников теории социализации Г.Тард писал, что постиндустриализм
-                                        представляет
-                                        собой феномен
-                                        толпы. Разновидность тоталитаризма неоднозначна.
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
                         </div>
                     </article>
+                    <div class="comment-form">
+                        <div data-type="child" class="comment-form__avatars _type-child" id="avatar"></div>
+                        <div class="comment-form__select">
+                            <div data-type="child" class="comment-form__avatars _type-child _checked"></div>
+                            <div data-type="women" class="comment-form__avatars _type-women"></div>
+                            <div data-type="women-2" class="comment-form__avatars _type-women-2"></div>
+                        </div>
+                        <fieldset class="comment-form__body _hidden" id="comment-form">
+                            <label for="commentName">Ваше ФИО:</label>
+                            <input type="text" class="form-control form-control-sm comment-form__name"
+                                   id="commentName"
+                                   placeholder="Иванов Иван Иванович">
+                            <label for="commentText">Комментарий:</label>
+                            <textarea placeholder="Текст вашего комментария"
+                                      class="form-control form-control-sm comment-form__textarea"
+                                      id="commentText" rows="3"></textarea>
+
+                            <div class="comment-form__buttons-group">
+                                <button class="btn btn-secondary btn-sm" id="cancelComment" type="submit">Отмена
+                                </button>
+                                <button class="btn btn-primary btn-sm" id="submitComment" type="submit" disabled>
+                                    Отправить
+                                </button>
+                            </div>
+                        </fieldset>
+                    </div>
                 </section>
             </section>
         </div>
@@ -214,7 +252,8 @@
                         Смотрите также
                     </div>
                     <div class="other-list__item">
-                        <div class="other-list__name">Питание во время беременности</div>
+                        <a href="#" class="other-list__name">Питание во время беременности</a>
+
                         <div class="other-list__buttons">
                             <div class="icon">
                                 <div class="icon__wrap">
@@ -231,7 +270,7 @@
                                     <span class="icon__counter">1923</span>
                                 </span>
                                 <span class="icon__item">
-                                    <span title="Поделиться" class="icon__share"></span>
+                                    <span title="Поделиться" class="icon__share  _popover" data-toggle="popover" data-placement="right" data-title="title" data-img="http://img.ru" data-desc="desc" data-url="yandex.ru"></span>
                                 </span>
                                 </div>
                             </div>
@@ -297,11 +336,10 @@
     </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<!--<script src="bootstrap.min.js"></script>-->
+<script src="JS/share.js"></script>
+<script src="JS/tether.min.js"></script>
 <script src="../bootstrap-4.0.0-alpha/dist/js/bootstrap.js"></script>
 <script src="JS/iscroll.js"></script>
 <script src="JS/index.js"></script>
-<script defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7png4T0hdBFqJ40gtLkfHH6vkvI-Vh-k&callback=initMap"></script>
 </body>
 </html>
