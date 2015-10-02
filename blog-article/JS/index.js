@@ -87,7 +87,6 @@ $('#commentName').on('input', function () {
 });
 
 function getValues() {
-    console.log(commentForm.data('level'));
     return {
         text: $('#commentText').val(),
         name: $('#commentName').val(),

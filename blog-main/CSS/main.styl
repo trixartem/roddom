@@ -1,0 +1,350 @@
+main {
+}
+
+body {
+    color: #535353;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+
+}
+
+.body {
+    &__breadcrumb {
+        margin: 19px 0 14px;
+        padding: 0 1.7375rem;
+    }
+    &__main {
+        padding: 0 1.7375rem;
+
+    }
+    &__share {
+        position: relative;
+        margin-bottom: 35px;
+    }
+    &__header {
+        text-align: center;
+        margin: 13px 0 0;
+        font-size: 37px;
+        font-weight: 400;
+        color: #00bb9c;
+    }
+    &__pagination {
+        text-align: center;
+        margin: 6px 0 68px;
+    }
+}
+
+.media-right {
+    padding-left: 36px;
+}
+
+.breadcrumb {
+    & > li + li:before {
+        content: ' >';
+        color: #b2b2b2;
+    }
+
+    &__link {
+        color: rgba(0, 184, 152, 1);
+        text-decoration: underline !important;
+        transition: color .2s ease;
+        font-weight: 400;
+        &:hover {
+            color: rgba(0, 184, 152, 0.6);
+        }
+    }
+
+    & > .active {
+        color: #b2b2b2;
+    }
+
+    margin-bottom: 0;
+    background: none;
+    padding: 0;
+    font-size: 12px;
+}
+
+.button_size_m {
+    border: 1px solid;
+    font-size: 13px;
+    vertical-align: middle;
+    border-radius: 5px;
+    line-height: 16px;
+    vertical-align: middle;
+    font-style: italic;
+    opacity: 1;
+    outline: none;
+    transition: opacity .2s ease-in;
+    &:hover {
+        opacity: .6;
+    }
+}
+
+.share {
+    &__img {
+        max-width: 232px;
+    }
+
+    &__text {
+        position: absolute;
+        top: 80px;
+        font-size: 40px;
+        color: #fff;
+        font-weight: 700;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+}
+
+.icon {
+    display: table;
+    &__wrap {
+        display: table-row;
+    }
+    &__item {
+        display: table-cell;
+    }
+    &__like,
+    &__messages,
+    &__view,
+    &__share {
+        background-image: url(../image/icons.svg);
+        user-select: none;
+        display: inline-block;
+        height: 12px;
+        vertical-align: middle;
+        opacity: 1;
+    }
+    &__like {
+        &:hover {
+            opacity: .2;
+        }
+        transition: opacity .2s ease-out;
+        cursor: pointer;
+        background-position: 279px -417px;
+        width: 16px;
+    }
+    &__messages {
+        background-position: 230px -417px;
+        width: 14px;
+        cursor: pointer;
+        text-decoration: none;
+        &:hover {
+            opacity: .2;
+        }
+        transition: opacity .2s ease-out;
+    }
+    &__view {
+        background-position: 188px -417px;
+        width: 17px;
+    }
+    &__share {
+        background-position: 131px -417px;
+        width: 13px;
+        cursor: pointer;
+        &:hover {
+            opacity: .2;
+        }
+        transition: opacity .2s ease-out;
+    }
+
+    &__counter {
+        font-size: 12px;
+        color: #c6c6c6;
+        display: inline-block;
+        min-width: 30px;
+        padding-right: 10px;
+    }
+}
+
+.b-container {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 0 .9375rem;
+}
+
+.popover {
+    border: 1px solid #ececec;
+    &-arrow {
+        border-right-color: rgba(0,0,0,0.15) !important;
+    }
+}
+
+
+.media-right.right {
+    min-width: 232px;
+}
+
+.post:nth-child(4n) {
+    margin-right: 0;
+}
+
+.post {
+    display: inline-block;
+    width: 210px;
+    height: 455px;
+    border: 1px solid #d9d9d9;
+    border-radius: 1px;
+    overflow: hidden;
+    margin: 0 23px 29px 0;
+    position: relative;
+    & .icon {
+        margin: 0 auto;
+    }
+    &__img {
+        max-height: 165px;
+        max-width: 210px;
+        border-bottom: 1px solid #d9d9d9;
+    }
+    &__header {
+        font-size: 18px;
+        color: #575756;
+        margin: 50px 11px 0 16px;
+        line-height: 22px;
+        height: 42px;
+        overflow: hidden;
+    }
+    &__date {
+        margin-left: 18px;
+        font-size: 10px;
+        position: absolute;
+        bottom: 50px;
+    }
+    &__preview {
+        font-size: 12px;
+        margin: 6px 7px 0 18px;
+        line-height: 17px;
+        max-height: 120px;
+        overflow: hidden;
+    }
+    &__likes {
+        padding-top: 5px;
+        text-align: center;
+        position: absolute;
+        bottom: 5px;
+        left: 12px;
+        right: 12px;
+        border-top: 1px dotted #d9d9d9;
+    }
+    &__category {
+        position: absolute;
+        top: 188px;
+        left: 22px;
+        font-size: 10px;
+        font-style: italic;
+        color: #707070;
+        text-decoration: underline;
+        transition: opacity .2s ease;
+        opacity: 1;
+        &:hover {
+            color: #707070;
+            opacity: .6;
+        }
+    }
+
+    &__header {
+        transition: opacity .2s ease;
+    }
+
+    &__link {
+        border: 0;
+        opacity: 1;
+        transition: opacity .2s ease;
+        &:hover,
+        &:hover .post__header {
+            opacity: .6;
+            text-decoration: none;
+        }
+    }
+
+}
+
+.share {
+    display: inline-block;
+    &__item &__link._twi {
+        background-position-y: -87px;
+    }
+    &__item &__link._vk {
+        background-position-y: -58px;
+    }
+    &__item &__link._fb {
+        background-position-y: 2px;
+    }
+    &__item &__link._mail {
+        background-position-y: -29px;
+    }
+    &__item &__link._odkl {
+        background-position-y: -116px;
+    }
+    &__item &__link._gplus {
+        background-position-y: -144px;
+    }
+    &__link._more {
+        background-image: url(../image/icons.svg);
+        background-position: -222px -252px;
+        background-size: 268px;
+        cursor: pointer;
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 0 23px 6px 0;
+        height: 25px;
+    }
+    &__item._popup {
+        margin: 0;
+    }
+    &__item._popup + &__item._popup {
+        margin-left: 20px;
+    }
+    &__item._column {
+        display: block;
+        margin: 0 0 10px 0;
+    }
+    &__link {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        background-color: #37b39c;
+        border-radius: 3px;
+        background-image: url(../image/b-share_counter_small.png);
+        background-repeat: no-repeat;
+        opacity: 1;
+        background-position-x: 1px;
+        transition: opacity .2s ease;
+
+        &:hover {
+            opacity: .6;
+        }
+    }
+}
+.sort {
+    margin: 12px 0 32px;
+    text-align: center;
+    &__select {
+        display: inline-block;
+        margin-right: 10px
+    }
+    &__link {
+        font-size: 12px;
+        text-decoration: underline;
+        color: #6D6D6D;
+        margin-right: 6px;
+        opacity: 1;
+        transition: opacity .2s ease;
+        &:hover {
+            color: #6D6D6D;
+            opacity: .6;
+        }
+    }
+    &__text {
+        font-size: 12px;
+        margin-right: 15px;
+    }
+}
+
