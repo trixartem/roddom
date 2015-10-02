@@ -77,6 +77,9 @@
 }
 body {
   color: #535353;
+  -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
 }
 .body__breadcrumb {
   margin: 19px 0 14px;
@@ -150,6 +153,7 @@ body {
 }
 .other-list__item {
   border-top: 1px solid #d5d5d5;
+  margin-top: 15px;
 }
 .other-list__name {
   color: #000;
@@ -634,6 +638,9 @@ body {
 }
 .popover {
   border: 1px solid #ececec;
+}
+.media-right.right {
+  min-width: 232px;
 }
 .footer {
   background: url("../image/footer-bg.jpg") 43% 100% no-repeat;

@@ -1,5 +1,9 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-require('./header')();
+$(document).ready(function () {
+    $('.sticky-wrap').stick_in_parent({
+        inner_scrolling: false
+    });
+});
 
 var commentForm = $('.comment-form');
 var select = commentForm.find('.comment-form__select');
@@ -36,11 +40,14 @@ var comments = $('.comments__list');
 
 $('.comments__button').click(function () {
     comments.append(commentForm);
+    setTimeout(scrollToCommentForm, 10);
+    commentForm.data('level', 0);
     showForm();
 });
 
 var maxLevel = $('.comments').data('maxlevel');
-$('.comment').click(function (e) {
+$('.comment').click(clickComment);
+function clickComment(e) {
     select.removeClass('_opened');
     e.stopPropagation();
 
@@ -58,10 +65,15 @@ $('.comment').click(function (e) {
     if (target.hasClass('comment__reply-to')) {
         commentForm.data('level', level + 1);
         $this.find('.comment__content').first().append(commentForm);
+        setTimeout(scrollToCommentForm, 10);
         showForm();
     }
-});
-
+}
+function scrollToCommentForm() {
+    $('body, html').animate({
+        scrollTop: commentForm.offset().top
+    }, 300);
+}
 $('#cancelComment').click(function () {
     hideForm();
 });
@@ -75,6 +87,7 @@ $('#commentName').on('input', function () {
 });
 
 function getValues() {
+    console.log(commentForm.data('level'));
     return {
         text: $('#commentText').val(),
         name: $('#commentName').val(),
@@ -138,7 +151,11 @@ function newComment(value) {
         '</time> <div class="comment__reply-to"></div> </div> <div class="comment__text">'
         + value.text +
         '</div> <div class="comment__content"></div> </div> </article>';
-    commentForm.before($(html));
+    var $html = $(html);
+    commentForm.before($html);
+    if (value.level === 0) {
+        $html.click(clickComment)
+    }
 }
 
 function hideForm() {
@@ -271,13 +288,5 @@ $('body').on('click', function (e) {
         }
     });
 });
-
-},{"./header":2}],2:[function(require,module,exports){
-module.exports = function (s) {
-    console.log('bbb', s);
-    console.log($('body'));
-    return;
-}
-
 
 },{}]},{},[1]);

@@ -1,4 +1,8 @@
-require('./header')();
+$(document).ready(function () {
+    $('.sticky-wrap').stick_in_parent({
+        inner_scrolling: false
+    });
+});
 
 var commentForm = $('.comment-form');
 var select = commentForm.find('.comment-form__select');
@@ -35,11 +39,14 @@ var comments = $('.comments__list');
 
 $('.comments__button').click(function () {
     comments.append(commentForm);
+    setTimeout(scrollToCommentForm, 10);
+    commentForm.data('level', 0);
     showForm();
 });
 
 var maxLevel = $('.comments').data('maxlevel');
-$('.comment').click(function (e) {
+$('.comment').click(clickComment);
+function clickComment(e) {
     select.removeClass('_opened');
     e.stopPropagation();
 
@@ -57,10 +64,15 @@ $('.comment').click(function (e) {
     if (target.hasClass('comment__reply-to')) {
         commentForm.data('level', level + 1);
         $this.find('.comment__content').first().append(commentForm);
+        setTimeout(scrollToCommentForm, 10);
         showForm();
     }
-});
-
+}
+function scrollToCommentForm() {
+    $('body, html').animate({
+        scrollTop: commentForm.offset().top
+    }, 300);
+}
 $('#cancelComment').click(function () {
     hideForm();
 });
@@ -74,6 +86,7 @@ $('#commentName').on('input', function () {
 });
 
 function getValues() {
+    console.log(commentForm.data('level'));
     return {
         text: $('#commentText').val(),
         name: $('#commentName').val(),
@@ -137,7 +150,11 @@ function newComment(value) {
         '</time> <div class="comment__reply-to"></div> </div> <div class="comment__text">'
         + value.text +
         '</div> <div class="comment__content"></div> </div> </article>';
-    commentForm.before($(html));
+    var $html = $(html);
+    commentForm.before($html);
+    if (value.level === 0) {
+        $html.click(clickComment)
+    }
 }
 
 function hideForm() {
