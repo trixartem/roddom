@@ -1,12 +1,1 @@
-.link {
-  -webkit-transition: color 0.2s ease;
-          transition: color 0.2s ease;
-}
-.link._cabinet {
-  color: #bcbcbc;
-  font-size: 12px;
-  text-decoration: underline;
-}
-.link._cabinet:hover {
-  color: #d4d4d4;
-}
+.link{-webkit-transition:color .2s ease;transition:color .2s ease;}.link._cabinet{color:#bcbcbc;font-size:12px;text-decoration:underline;}.link._cabinet:hover{color:#d4d4d4}
