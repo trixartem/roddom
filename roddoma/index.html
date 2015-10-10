@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name=”description” content=”Список роддомов Москвы, где проводят естественные (физиологические) роды,
+          партнерские роды и роды с акушеркой To Be Parents.”>
+    <meta name="Keywords" content="роддома Москвы, естественные роды в роддоме">
+    <title>Лучшие роддома Москвы</title>
+
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="jquery.fancybox.css">
+
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+<header class="header b-container">
+    <div class="row">
+        <div class="header__left col-xs-3">
+            <figure class="header__logo"><a class="link logo" href="/"></a></figure>
+        </div>
+        <div class="header__right col-xs-offset-3">
+            <div class="header__contacts"><a href="#" class="link _cabinet">Личный кабинет</a>
+                <figure class="header__search"></figure>
+                <span class="header__phone">+7(495)321-54-76</span></div>
+            <nav class="header__menu">
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a class="menu__link _active" href="#">О нас</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Специалисты</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Прайс</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Расписание</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Лицензия</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Магазин</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="line"></div>
+<main class="body b-container">
+    <section class="body__breadcrumb">
+        <ol class="breadcrumb" style="margin-bottom: 0;">
+            <li class="active"><a class="breadcrumb__link" href="#">Главная</a></li>
+            <li class="active">Роддома</li>
+        </ol>
+    </section>
+    <section class="body__maps">
+        <h1 class="body__header _roddom">Роддома</h1>
+        <figure class="gmaps">
+            <div class="gmaps__map" id="map"></div>
+            <section class="gmaps__card">
+                <div class="address _checked" data-value="1">
+                    <h2 class="address__header" data-value="1"><span class="dotted">ПМЦ на Севастопольском</span></h2>
+
+                    <div class="address__content">
+                        <div class="address__info">
+                            <img class="address__img" src="image/roddom-01.jpg">
+
+                            <div class="address__metro">Севастопольская</div>
+                            <div class="address__full">123123 г. Москва, ул.Проспектная, д. 15</div>
+                            <table class="address__table">
+                                <tr>
+                                    <td>Пн-пт:</td>
+                                    <td>11:00 &ndash; 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Вс:</td>
+                                    <td>11:00 &ndash; 18:00</td>
+                                </tr>
+                            </table>
+                            <div class="address__phone">+7(495)543-80-70</div>
+                            <div class="address__button">
+                                <button data-target="#appointment"
+                                        data-toggle="modal" class="btn btn-sm btn-primary btn-block">Заключить контракт
+                                    на роды в этом
+                                    роддоме
+                                </button>
+                            </div>
+                        </div>
+                        <div class="address__gallery">
+                            <a class="fancybox" rel="gallery-1" href="image/285.png"><img src="image/95.png" alt=""
+                                /></a><a class="fancybox" rel="gallery-1" href="image/285.png"><img src="image/95.png" alt=""
+                                /></a><a class="fancybox" rel="gallery-1" href="image/285.png"><img src="image/95.png" alt=""
+                                /></a><a class="fancybox" rel="gallery-1" href="image/285.png"><img src="image/95.png" alt=""
+                                /></a><a class="fancybox" rel="gallery-1" href="image/285.png"><img src="image/95.png" alt=""
+                                /></a>
+                        </div>
+                        <div class="address__comments">
+                            <div class="comments">
+                                <div class="comments__header">Отзывы</div>
+                                <div class="comments__body">
+                                    <div class="comments__item">
+                                        <div class="comments__text">
+                                            Один из признанных классиков маркетинга Ф.Котлер определяет это так:
+                                            фирменный стиль подсознательно синхронизирует обществвенный пул лояльных
+                                            изданий, опираясь на опыт западных коллег. Жизненный цикл продукции, вопреки
+                                            мнению П.Друкера, однообразно тормозит медиаплан, учитывая результат
+                                            предыдущих медиа-кампаний. Жизненный цикл продукции, как принято считать,
+                                            экономит культурный имидж. Интересно отметить, что сегментация рынка
+                                            откровенно цинична.
+                                        </div>
+                                        <div class="comments__author">
+                                            - Имя Фамилия
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comments__footer">
+                                    <a class="comments__button">Оставить отзыв</a>
+
+                                    <div class="comments__pagination">
+                                        <nav>
+                                            <ul class="pagination pagination-xs">
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="address" data-value="2">
+                    <h2 class="address__header" data-value="2"><span class="dotted">ПМЦ на Тверском</span></h2>
+
+                    <div class="address__content">
+                        <div class="address__info">
+                            <img class="address__img" src="image/roddom-01.jpg">
+
+                            <div class="address__metro">Севастопольская</div>
+                            <div class="address__full">123123 г. Москва, ул.Проспектная, д. 15</div>
+                            <table class="address__table">
+                                <tr>
+                                    <td>Пн-пт:</td>
+                                    <td>11:00 &ndash; 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Вс:</td>
+                                    <td>11:00 &ndash; 18:00</td>
+                                </tr>
+                            </table>
+                            <div class="address__phone">+7(495)543-80-70</div>
+                            <div class="address__button">
+                                <button data-target="#appointment"
+                                        data-toggle="modal" class="btn btn-sm btn-primary btn-block">Заключить контракт
+                                    на роды в этом
+                                    роддоме
+                                </button>
+                            </div>
+                        </div>
+                        <div class="address__gallery">
+                            <a class="fancybox" rel="gallery-2" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a><a class="fancybox" rel="gallery-2" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a><a class="fancybox" rel="gallery-2" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a><a class="fancybox" rel="gallery-2" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a><a class="fancybox" rel="gallery-2" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a>
+                        </div>
+                        <div class="address__comments">
+                            <div class="comments">
+                                <div class="comments__header">Отзывы</div>
+                                <div class="comments__body">
+                                    <div class="comments__item">
+                                        <div class="comments__text">
+                                            Один из признанных классиков маркетинга Ф.Котлер определяет это так:
+                                            фирменный стиль подсознательно синхронизирует обществвенный пул лояльных
+                                            изданий, опираясь на опыт западных коллег. Жизненный цикл продукции, вопреки
+                                            мнению П.Друкера, однообразно тормозит медиаплан, учитывая результат
+                                            предыдущих медиа-кампаний. Жизненный цикл продукции, как принято считать,
+                                            экономит культурный имидж. Интересно отметить, что сегментация рынка
+                                            откровенно цинична.
+                                        </div>
+                                        <div class="comments__author">
+                                            - Имя Фамилия
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comments__footer">
+                                    <a class="comments__button">Оставить отзыв</a>
+
+                                    <div class="comments__pagination">
+                                        <nav>
+                                            <ul class="pagination pagination-xs">
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="address" data-value="3">
+                    <h2 class="address__header" data-value="3"><span class="dotted">ПМЦ на Дмитровском</span></h2>
+
+                    <div class="address__content">
+                        <div class="address__info">
+                            <img class="address__img" src="image/roddom-01.jpg">
+
+                            <div class="address__metro">Севастопольская</div>
+                            <div class="address__full">123123 г. Москва, ул.Проспектная, д. 15</div>
+                            <table class="address__table">
+                                <tr>
+                                    <td>Пн-пт:</td>
+                                    <td>11:00 &ndash; 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Вс:</td>
+                                    <td>11:00 &ndash; 18:00</td>
+                                </tr>
+                            </table>
+                            <div class="address__phone">+7(495)543-80-70</div>
+                            <div class="address__button">
+                                <button data-target="#appointment"
+                                        data-toggle="modal" class="btn btn-sm btn-primary btn-block">Заключить контракт
+                                    на роды в этом
+                                    роддоме
+                                </button>
+                            </div>
+                        </div>
+                        <div class="address__gallery">
+                            <a class="fancybox" rel="gallery-3" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a><a class="fancybox" rel="gallery-3" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a><a class="fancybox" rel="gallery-3" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a><a class="fancybox" rel="gallery-3" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a><a class="fancybox" rel="gallery-3" href="image/285.png"><img src="image/95.png" alt=""
+                               /></a>
+                        </div>
+                        <div class="address__comments">
+                            <div class="comments">
+                                <div class="comments__header">Отзывы</div>
+                                <div class="comments__body">
+                                    <div class="comments__item">
+                                        <div class="comments__text">
+                                            Один из признанных классиков маркетинга Ф.Котлер определяет это так:
+                                            фирменный стиль подсознательно синхронизирует обществвенный пул лояльных
+                                            изданий, опираясь на опыт западных коллег. Жизненный цикл продукции, вопреки
+                                            мнению П.Друкера, однообразно тормозит медиаплан, учитывая результат
+                                            предыдущих медиа-кампаний. Жизненный цикл продукции, как принято считать,
+                                            экономит культурный имидж. Интересно отметить, что сегментация рынка
+                                            откровенно цинична.
+                                        </div>
+                                        <div class="comments__author">
+                                            - Имя Фамилия
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comments__footer">
+                                    <a data-target="#create-comment" data-toggle="modal" class="comments__button">Оставить
+                                        отзыв</a>
+
+                                    <div class="comments__pagination">
+                                        <nav>
+                                            <ul class="pagination pagination-xs">
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </figure>
+    </section>
+
+</main>
+<div class="line"></div>
+<footer class="footer b-container">
+    <div class="row">
+        <div class="footer__left col-xs-3">
+            <figure class="footer__logo"><a class="link logo" href="/"></a></figure>
+            <div class="footer__copyright">To Be Parents. Все права защещены. 2015&copy;</div>
+        </div>
+        <div class="footer__right col-xs-offset-8">
+            <div class="row">
+                <div class="col-xs-3">
+                    <a class="link map__r1" href="#">Специалисты</a>
+
+                    <div class="map__group">
+                        <a class="link map__r2" href="#">Ссылка1</a>
+                        <a class="link map__r2" href="#">Специалисты</a>
+                        <a class="link map__r2" href="#">Ссылка3</a>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <a class="link map__r1" href="#">Здесь</a>
+
+                    <div class="map__group">
+                        <a class="link map__r2" href="#">Ссылка1</a>
+                        <a class="link map__r2" href="#">Расписание</a>
+                        <a class="link map__r2" href="#">Ссылка3</a>
+                    </div>
+                    </a></div>
+                <div class="col-xs-3"><a class="link map__r1" href="#"><a class="link map__r1" href="#">Здесь</a>
+
+                    <div class="map__group">
+                        <a class="link map__r2" href="#">Ссылка1</a>
+                        <a class="link map__r2" href="#">О нас</a>
+                        <a class="link map__r2" href="#">Ссылка3</a>
+                    </div>
+                </a></div>
+                <div class="col-xs-3"><a class="link map__r1" href="#"><a class="link map__r1" href="#">Здесь</a>
+
+                    <div class="map__group">
+                        <a class="link map__r2" href="#">Ссылка1</a>
+                        <a class="link map__r2" href="#">Ссылка2</a>
+                        <a class="link map__r2" href="#">Ссылка3</a>
+                    </div>
+                </a></div>
+            </div>
+            <div class="footer__social">
+                <span class="social__text">Мы в соцсетях:</span>
+                <span class="social__item social__facebook"></span>
+                <span class="social__item social__twitter"></span>
+                <span class="social__item social__youtube"></span>
+                <span class="social__item social__rss"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="appointment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Заключить контракт на роды</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <div class="form-group">
+                        <label for="select-roddom">Роддом:</label>
+                        <select class="form-control" id="select-roddom">
+                            <option value="0">ПМЦ на Севастопольском</option>
+                            <option value="1">ПМЦ на Тверском</option>
+                            <option value="2">ПМЦ на Дмитровском</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-name" class="control-label">Фамили Имя Отчество:</label>
+                        <input type="text" class="form-control" required id="client-name"
+                               placeholder="Ваше Фамили Имя Отчество">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="control-label">Ваш номер телефона:</label>
+                        <input type="phone" class="form-control" required id="phone" placeholder="+7(495)1231212">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment" class="control-label">Комментарий:</label>
+                        <textarea class="form-control" id="comment"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Отмена</button>
+                <button type="button" disabled id="submit-form" class="btn btn-primary btn-sm" type="submit">
+                    Записаться
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="create-comment" tabindex="-1" role="dialog" aria-labelledby="create-comment"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Ваш отзыв</h4>
+            </div>
+            <div class="modal-body">
+                <form id="comment-form">
+                    <div class="form-group">
+                        <label for="comment-roddom">Роддом:</label>
+                        <select class="form-control" id="comment-roddom">
+                            <option value="0">ПМЦ на Севастопольском</option>
+                            <option value="1">ПМЦ на Тверском</option>
+                            <option value="2">ПМЦ на Дмитровском</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-client-name" class="control-label">Фамили Имя Отчество:</label>
+                        <input type="text" class="form-control" required id="comment-client-name"
+                               placeholder="Ваше Фамили Имя Отчество">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-full" class="control-label">Комментарий:</label>
+                        <textarea class="form-control" id="comment-full"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Отмена</button>
+                <button type="button" disabled id="comment-submit-form" class="btn btn-primary btn-sm" type="submit">
+                    Записаться
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="gallery" tabindex="-1" role="dialog" aria-labelledby="create-comment" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="fororama" data-width="100%">
+                    <img src="image/900.png">
+                    <img src="image/900.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="jquery.fancybox.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="JS/index.js"></script>
+<script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7png4T0hdBFqJ40gtLkfHH6vkvI-Vh-k&callback=initMap"></script>
+</body>
+</html>
