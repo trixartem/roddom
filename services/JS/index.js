@@ -1,5 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-require('./header');
 require('./form')();
 require('./calendar')();
 
@@ -164,8 +163,35 @@ $('.tabs__item').click(function () {
     checkedTabItem = $this;
 });
 
+var select = $('.select');
 
-},{"./calendar":2,"./form":3,"./header":4,"./iscroll":5}],2:[function(require,module,exports){
+$(document).click(function () {
+   $('.select__list').removeClass('showed');
+});
+
+select.each(function () {
+    var $select = $(this);
+    var list = $select.find('.select__list');
+    var items = list.find('.select__item');
+    //$select.on('change', function () {
+    //    console.log(arguments);
+    //})
+    items.click(function (e) {
+        var $this = $(this);
+        e.stopPropagation();
+        $('.select__list').removeClass('showed');
+        $select.trigger('change',  $this.data('value') || $this.text());
+        list.removeClass('showe');
+    });
+    $select.find('.select__toggle-button').click(function (e) {
+        e.stopPropagation();
+        $('.select__list').removeClass('showed');
+        list.toggleClass('showed');
+    });
+});
+
+
+},{"./calendar":2,"./form":3,"./iscroll":4}],2:[function(require,module,exports){
 module.exports = function () {
     $(document).ready(function () {
 
@@ -190,7 +216,12 @@ module.exports = function () {
                 anotherObject: "clndr exposes whatever is in your event object"
             }
         ];
-
+        var rowDate = $('.calendar__row');
+        var moreButton = $('.calendar__all');
+        moreButton.click(function () {
+            $(this).hide();
+            rowDate.show();
+        })
         var calendar = $('.calendar__body').clndr({
            template: $('#template-calendar').html(),
            events: eventArray,
@@ -199,7 +230,16 @@ module.exports = function () {
            daysOfTheWeek: ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
            clickEvents: {
              click: function(target) {
-               console.log(target);
+                 if (!target.events.length) {
+                     return;
+                 }
+                 var date = target.date['_i']
+                 var currentRow = rowDate.filter(function () {
+                     return $(this).data('value') === date;
+                 });
+                 rowDate.hide();
+                 currentRow.show();
+                 moreButton.show();
              }
            }
          });
@@ -209,27 +249,15 @@ module.exports = function () {
 },{}],3:[function(require,module,exports){
 module.exports = function () {
     var submitForm = $('#submit-form');
-    var name = $('#name');
     var clientName = $('#client-name');
     var phone = $('#phone');
     var formIsValid = {
-        name: false,
         clientName: false,
         phone: false
     }
-    name.on('input', function () {
-        if (name.val() === '') {
-            toggleInput(name, false)
-            formIsValid.name = false;
-        } else {
-            formIsValid.name = true;
-            toggleInput(name, true)
-        }
-        checkForms()
-    });
 
     clientName.on('input', function () {
-        if (name.val() === '') {
+        if (clientName.val() === '') {
             formIsValid.clientName = false;
             toggleInput(clientName, false)
         } else {
@@ -238,7 +266,10 @@ module.exports = function () {
         }
         checkForms();
     });
-
+    submitForm.click(function () {
+        $('#appointment').modal('hide');
+        $('#success').modal('show');
+    });
     phone.on('input', function () {
         var phoneIsValid = ValidPhone(phone.val())
         toggleInput(phone, phoneIsValid)
@@ -279,14 +310,6 @@ module.exports = function () {
 }
 
 },{}],4:[function(require,module,exports){
-module.exports = function (s) {
-    console.log('bbb', s);
-    console.log($('body'));
-    return;
-}
-
-
-},{}],5:[function(require,module,exports){
 /*! iScroll v5.1.3 ~ (c) 2008-2014 Matteo Spinelli ~ http://cubiq.org/license */
 (function (window, document, Math) {
 var rAF = window.requestAnimationFrame	||

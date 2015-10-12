@@ -22,7 +22,12 @@ module.exports = function () {
                 anotherObject: "clndr exposes whatever is in your event object"
             }
         ];
-
+        var rowDate = $('.calendar__row');
+        var moreButton = $('.calendar__all');
+        moreButton.click(function () {
+            $(this).hide();
+            rowDate.show();
+        })
         var calendar = $('.calendar__body').clndr({
            template: $('#template-calendar').html(),
            events: eventArray,
@@ -31,7 +36,16 @@ module.exports = function () {
            daysOfTheWeek: ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
            clickEvents: {
              click: function(target) {
-               console.log(target);
+                 if (!target.events.length) {
+                     return;
+                 }
+                 var date = target.date['_i']
+                 var currentRow = rowDate.filter(function () {
+                     return $(this).data('value') === date;
+                 });
+                 rowDate.hide();
+                 currentRow.show();
+                 moreButton.show();
              }
            }
          });

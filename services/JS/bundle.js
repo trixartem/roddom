@@ -1,4 +1,3 @@
-require('./header');
 require('./form')();
 require('./calendar')();
 
@@ -161,5 +160,32 @@ $('.tabs__item').click(function () {
     $this.addClass('_checked');
 
     checkedTabItem = $this;
+});
+
+var select = $('.select');
+
+$(document).click(function () {
+   $('.select__list').removeClass('showed');
+});
+
+select.each(function () {
+    var $select = $(this);
+    var list = $select.find('.select__list');
+    var items = list.find('.select__item');
+    //$select.on('change', function () {
+    //    console.log(arguments);
+    //})
+    items.click(function (e) {
+        var $this = $(this);
+        e.stopPropagation();
+        $('.select__list').removeClass('showed');
+        $select.trigger('change',  $this.data('value') || $this.text());
+        list.removeClass('showe');
+    });
+    $select.find('.select__toggle-button').click(function (e) {
+        e.stopPropagation();
+        $('.select__list').removeClass('showed');
+        list.toggleClass('showed');
+    });
 });
 

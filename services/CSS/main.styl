@@ -40,7 +40,14 @@ body {
     }
 
 }
-
+a {
+    opacity: 1;
+    transition: opacity .2s ease;
+    &:hover {
+        text-decoration: none;
+        opacity: .6;
+    }
+}
 .breadcrumb {
     & > li + li:before {
         content: ' >';
@@ -294,22 +301,22 @@ body {
 .share {
     display: inline-block;
     &__item &__link._twi {
-        background-position-y: -87px;
+        background-position: 0 -87px;
     }
     &__item &__link._vk {
-        background-position-y: -58px;
+        background-position: 0  -58px;
     }
     &__item &__link._fb {
-        background-position-y: 2px;
+        background-position: 0 2px;
     }
     &__item &__link._mail {
-        background-position-y: -29px;
+        background-position: 0 -29px;
     }
     &__item &__link._odkl {
-        background-position-y: -116px;
+        background-position: 0 -116px;
     }
     &__item &__link._gplus {
-        background-position-y: -144px;
+        background-position: 0 -144px;
     }
     &__link._more {
         background-image: url(../image/icons.svg);
@@ -494,6 +501,7 @@ body {
         }
     }
     &__item {
+        white-space: nowrap;
         display: inline-block;
         line-height: 26px;
         font-size: 19px;
@@ -525,10 +533,15 @@ body {
 }
 
 .specialist {
+    &-slider__item:hover {
+        color: #37b39d;
+    }
+
     &-slider__item {
         width: 231px;
         margin-right: 30px;
     }
+
     &__info {
         padding: 24px 16px 26px;
     }
@@ -606,12 +619,13 @@ body {
         display: inline-block;
     }
     &__header {
-        background-color: #00E9CF;
+        background-color: #6ae2cb;
         line-height: 36px;
         padding-left: 16px;
         font-size: 13px;
     }
     &__switch {
+        display: inline-block;
         &._time {
             display: inline-block;
             width: 91px;
@@ -642,17 +656,25 @@ body {
         padding: 6px 0;
         width: 100px;
     }
-    & table .button .btn{
+    & table .button .btn,
+    & &__all.btn {
         border: 1px solid #fff;
         color: #fff;
         padding: 0 4px;
-        line-height: 18px;
+
         border-radius: 5px;
         outline: none;
         opacity: 1;
         transition: opacity .2s ease;
         &:hover {
             opacity: .6;
+        }
+    }
+    & &__all.btn {
+        margin: 0 0 10px;
+        line-height: 20px;
+        &.hidden {
+            display: none;
         }
     }
     & table .button{
@@ -662,6 +684,9 @@ body {
     }
     &__row {
         white-space: nowrap
+        &.hidden {
+            display: none;
+        }
     }
     &__month {
         color: #00aa91;
@@ -674,7 +699,7 @@ body {
         display: inline-block;
     }
     &__list {
-        background-color: #00D4BA;
+        background-color: #55ceb7;
         height: 277px;
         overflow-y: auto;
     }
@@ -683,3 +708,81 @@ body {
         border-bottom: 1px solid #78d3c2;
     }
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button,
+input[type=time]::-webkit-inner-spin-button,
+input[type=time]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+#comment-roddom {
+   height: 38px;
+}
+
+.select {
+    position: relative;
+    display: inline-block;
+    &__toggle-button {
+        user-select: none;
+        cursor: pointer;
+        &::after {
+            content: '›';
+            transform: rotate(90deg);
+            position: relative;
+            display: inline-block;
+            margin: 0 8px;
+            font-size: 19px;
+            line-height: 37px;
+            vertical-align: middle;
+        }
+    }
+    &__item {
+        margin: 0;
+        padding: 0 10px;
+        white-space: nowrap;
+        line-height: 22px;
+        transition-property: background-color, color;
+        transition-duration: 0.2s;
+        cursor: pointer;
+        color: #9f9f9f;
+        &:hover {
+            background-color: #00bb9c;
+            color: #fff;
+        }
+    }
+    &__list {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        top: 25px;
+        background-color: #fff;
+        z-index: 1;
+        color: #ababaa;
+        border: 1px solid #d4d4d4;
+        transition-property: visibility, opacity;
+        transition-duration: 0s, .2s;
+        transition-delay: .2s, 0s;
+        &.showed {
+            visibility: visible;
+            opacity: 1;
+            transition-delay: 0s;
+        }
+    }
+}
+.success {
+    &__img {
+        background-image: url('../image/success.png');
+        background-size: 60px;
+        width: 60px;
+        height: 60px;
+        float: left;
+        margin-right: 15px;
+    }
+}
+

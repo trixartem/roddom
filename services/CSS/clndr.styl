@@ -2,7 +2,7 @@
     width: 100%;
     & .clndr .clndr-controls {
         //display: block;
-        background-color: #00e9cf;
+        background-color: #6ae2cb;
         text-align: center;
         display: inline-block;
         width: 100%;
@@ -83,10 +83,18 @@
     & .clndr .clndr-grid .day.last-month {
         visibility: hidden;
     }
+    & .clndr .clndr-grid .day.event:hover {
+        opacity: .6;
+        cursor: pointer;
+    }
+
     & .clndr .clndr-grid .day.event {
         color: #fff;
-        background-color: #00D4BD;
+        background-color: #55ceb7;
+        transition: opacity .2s ease;
+        opacity: 1;
     }
+
     & .clndr .clndr-grid .day.today {
         //background-color: #e3c57f;
     }

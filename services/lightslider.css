@@ -160,7 +160,7 @@
     background-image: url('image/icons.svg');
     cursor: pointer;
     position: absolute;
-    z-index: 9999;
+    z-index: 9;
     margin-top: -16px;
     opacity: 1;
     -webkit-transition: opacity 0.2s ease 0s;

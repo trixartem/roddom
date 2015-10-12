@@ -1,26 +1,14 @@
 module.exports = function () {
     var submitForm = $('#submit-form');
-    var name = $('#name');
     var clientName = $('#client-name');
     var phone = $('#phone');
     var formIsValid = {
-        name: false,
         clientName: false,
         phone: false
     }
-    name.on('input', function () {
-        if (name.val() === '') {
-            toggleInput(name, false)
-            formIsValid.name = false;
-        } else {
-            formIsValid.name = true;
-            toggleInput(name, true)
-        }
-        checkForms()
-    });
 
     clientName.on('input', function () {
-        if (name.val() === '') {
+        if (clientName.val() === '') {
             formIsValid.clientName = false;
             toggleInput(clientName, false)
         } else {
@@ -29,7 +17,10 @@ module.exports = function () {
         }
         checkForms();
     });
-
+    submitForm.click(function () {
+        $('#appointment').modal('hide');
+        $('#success').modal('show');
+    });
     phone.on('input', function () {
         var phoneIsValid = ValidPhone(phone.val())
         toggleInput(phone, phoneIsValid)

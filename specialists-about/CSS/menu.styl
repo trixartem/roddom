@@ -1,0 +1,32 @@
+.menu {
+    &__link {
+        padding: .49em .8rem;
+        border: 1px solid transparent;
+        border-radius: 7px;
+        text-transform: uppercase;
+        transition: color .15s;
+        color: rgba(55, 179, 156, .9);
+
+        &:hover {
+            text-decoration: none;
+            color: rgba(55, 179, 156, .6);
+        }
+
+        &._active {
+            border-color: #31ccb7;
+            color: rgba(143, 143, 143, .9);
+        }
+
+        &:focus {
+            text-decoration: none
+            color: rgba(55, 179, 156, .9);
+            outline: none;
+        }
+    }
+
+    &__item {
+        line-height: 2.7rem;
+        display: inline-block
+    }
+
+}
