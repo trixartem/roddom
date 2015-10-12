@@ -1,11 +1,16 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 require('./header');
-require('./gmaps')();
 require('./form')();
+require('./calendar')();
+
 var iScroll = require('./iscroll');
 
-function scroll() {
-    var myScroll = new iScroll('#gallery', {
+function scroll(selector, opt) {
+    return new iScroll(selector, opt);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var slider = scroll('#gallery', {
         freeScroll: true,
         mouseWheel: true,
         scrollbars: true,
@@ -14,10 +19,6 @@ function scroll() {
         tap: true,
         scrollX: true
     });
-    return myScroll;
-}
-document.addEventListener('DOMContentLoaded', function () {
-    var myScroll = scroll();
     var items = [];
     $('.carousel-item').each(function (key, item) {
         var $item = $(item);
@@ -25,16 +26,187 @@ document.addEventListener('DOMContentLoaded', function () {
         if (target || target === 0) {
             items[target] = key;
         }
-    })
+    });
     var carousel = $('#carousel');
     $('.gallery__item').click(function () {
         var id = $(this).data('id');
         carousel.carousel(items[id])
-        myScroll.scrollToElement(this, 700, null, null, IScroll.utils.ease.quadratic);
-    })
+        slider.scrollToElement(this, 700, null, null, IScroll.utils.ease.quadratic);
+    });
+    $(".calendar__list").mCustomScrollbar({
+        axis:"y",
+        theme:"parent",
+        scrollButtons:{ enable: true },
+        scrollbarPosition: "outside"
+    });
 }, false);
+function getMoreShare() {
+    var u = location.href,
+        t,
+        i,
+        d;
 
-},{"./form":2,"./gmaps":3,"./header":4,"./iscroll":5}],2:[function(require,module,exports){
+    if (!t) {
+        t = document.title;
+    }
+    if (!d) {
+        var meta = $('meta[name="description"]').attr('content');
+        if (meta !== undefined)d = meta; else d = '';
+    }
+    u = encodeURIComponent(u);
+    t = encodeURIComponent(t);
+    t = t.replace(/\'/g, '%27');
+    i = encodeURIComponent(i);
+    d = encodeURIComponent(d);
+    d = d.replace(/\'/g, '%27');
+    var fbQuery = 'u=' + u;
+    if (i != 'null' && i != '')fbQuery = 's=100&p[url]=' + u + '&p[title]=' + t + '&p[summary]=' + d + '&p[images][0]=' + i;
+    var vkImage = '';
+    if (i != 'null' && i != '')vkImage = '&image=' + i;
+    var s = new Array(
+        '"#" data-count="gplus" class="share__link _gplus" onclick="window.open(\'//plus.google.com/share?url=' + u + '\', \'_blank\', \'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0\');return false" title="Поделиться в Google+"',
+        '"#" data-count="mail" class="share__link _mail" onclick="window.open(\'//connect.mail.ru/share?url=' + u + '&title=' + t + '&description=' + d + '&imageurl=' + i + '\', \'_blank\', \'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0\');return false" title="Поделиться в Моем Мире@Mail.Ru"',
+        '"#" data-count="odkl" class="share__link _odkl" onclick="window.open(\'//ok.ru/dk?st.cmd=addShare&st._surl=' + u + '&title=' + t + '\', \'_blank\', \'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0\');return false" title="Добавить в Одноклассники"'
+    );
+    var l = '';
+    for (var j = 0; j < s.length; j++) {
+        l += '<span class="share__item _popup">' +
+            '<a rel="nofollow" href=' + s[j] + ' target="_blank"></a></span>';
+    }
+    return l;
+}
+$('#share-more').popover({
+    html: true,
+    container: 'body',
+    trigger: 'click',
+    placement: 'top',
+    template: '<div class="popover" role="tooltip"><div class="popover-arrow"></div><div class="popover-content"></div></div>',
+    content: getMoreShare()
+});
+
+$('body').on('click', function (e) {
+    $('[data-toggle="popover"]').each(function () {
+        //the 'is' for buttons that trigger popups
+        //the 'has' for icons within a button that triggers a popup
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+
+        }
+    });
+});
+
+$(document).ready(function () {
+    //$('.text-slider').slick({
+    //    slidesToShow: 3,
+    //    prevArrow: '<div class="slider-arrow__wrap _prev"><span class="slider-arrow"></span></div>',
+    //    nextArrow: '<div class="slider-arrow__wrap _next"><span class="slider-arrow"></span></div>',
+    //    variableWidth: true,
+    //    slidesToScroll: 1
+    //});
+    //$('.address-slider').slick({
+    //    slidesToShow: 3,
+    //    prevArrow: '<div class="slider-arrow__wrap _prev"><span class="slider-arrow"></span></div>',
+    //    nextArrow: '<div class="slider-arrow__wrap _next"><span class="slider-arrow"></span></div>',
+    //    variableWidth: true,
+    //    slidesToScroll: 3
+    //});
+
+    $('.address-slider').lightSlider({
+        addClass: 'address',
+        autoWidth: true,
+        enableDrag: false,
+        slideMargin: 30,
+        slideMove: 3,
+        loop: false,
+        pager: false
+    });
+    $('.text-slider').lightSlider({
+        autoWidth: true,
+        enableDrag: false,
+        slideMargin: 0,
+        loop: true,
+        pager: false
+    });
+
+    $('.specialist-slider').lightSlider({
+        addClass: 'specialist',
+        autoWidth: true,
+        enableDrag: false,
+        slideMargin: 30,
+        slideMove: 3,
+        loop: false,
+        pager: false
+    });
+    //$(".calendar__list").mCustomScrollbar({
+    //    axis:"y"
+    //});
+});
+var checkedTabItem = $('.tabs__item._checked');
+var $tabs = $('.tabs__tab');
+var checkedTab = $tabs.filter('._checked');
+$('.tabs__item').click(function () {
+    var $this = $(this);
+    if ($this.hasClass('_checked')) {
+        return;
+    }
+    if ($this.data('url')) {
+        document.location.assign($this.data('url'));
+        return;
+    }
+    checkedTabItem.removeClass('_checked');
+    checkedTab.removeClass('_checked');
+
+    checkedTab = $tabs.eq($this.data('num') - 1)
+
+    checkedTab.addClass('_checked');
+    $this.addClass('_checked');
+
+    checkedTabItem = $this;
+});
+
+
+},{"./calendar":2,"./form":3,"./header":4,"./iscroll":5}],2:[function(require,module,exports){
+module.exports = function () {
+    $(document).ready(function () {
+
+        // here's some magic to make sure the dates are happening this month.
+        moment.locale('fr', {
+            months: "Январь_Февраль_Март_Апрель_Май_Июнь_Июль_Август_Сентябрь_Октябрь_Ноябрь_Декабрь".split("_")
+        });
+        var thisMonth = moment().locale('ru').format('YYYY-MM');
+
+        // Here's our events array. We could grab this via AJAX as well.
+        var eventArray = [
+            {
+                date: thisMonth + "-24 07:52",
+                title: "This is an event title",
+                url: "http://google.com",
+                time: "7:15PM"
+            },
+            { date: thisMonth + "-28", title: "the 28th, Part 1", url: "http://www.google.com" },
+            {
+                date: thisMonth + "-16",
+                title: "Another title",
+                anotherObject: "clndr exposes whatever is in your event object"
+            }
+        ];
+
+        var calendar = $('.calendar__body').clndr({
+           template: $('#template-calendar').html(),
+           events: eventArray,
+            weekOffset: 1,
+           startWithMonth: moment().add('month', 0),
+           daysOfTheWeek: ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
+           clickEvents: {
+             click: function(target) {
+               console.log(target);
+             }
+           }
+         });
+    });
+}
+
+},{}],3:[function(require,module,exports){
 module.exports = function () {
     var submitForm = $('#submit-form');
     var name = $('#name');
@@ -104,364 +276,6 @@ module.exports = function () {
             elem.removeClass('form-control-success');
         }
     }
-}
-
-},{}],3:[function(require,module,exports){
-//var changeSelect = require('./select')();
-
-module.exports = function () {
-    window.initMap = function () {
-        var map;
-        var styles = [
-            {
-                "featureType": "all",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "saturation": "-100"
-                    }
-                ]
-            },
-            {
-                "featureType": "all",
-                "elementType": "labels",
-                "stylers": [
-                    {
-                        "saturation": "-100"
-                    }
-                ]
-            },
-            {
-                "featureType": "administrative",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#808080"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "hue": "#FFBB00"
-                    },
-                    {
-                        "saturation": 43.4
-                    },
-                    {
-                        "lightness": 37.6
-                    },
-                    {
-                        "gamma": 1
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#4b4b4b"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape.man_made",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#f5f5f5"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape.man_made",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "saturation": "0"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "hue": "#00FF6A"
-                    },
-                    {
-                        "saturation": -1.0989010989011234
-                    },
-                    {
-                        "lightness": 11.200000000000017
-                    },
-                    {
-                        "gamma": 1
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.park",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#d5d5d5"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.park",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#000000"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "hue": "#FFC200"
-                    },
-                    {
-                        "saturation": -61.8
-                    },
-                    {
-                        "lightness": 45.599999999999994
-                    },
-                    {
-                        "gamma": 1
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#b4b4b4"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#272727"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "labels.text.stroke",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "road.arterial",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "hue": "#FF0300"
-                    },
-                    {
-                        "saturation": -100
-                    },
-                    {
-                        "lightness": 51.19999999999999
-                    },
-                    {
-                        "gamma": 1
-                    }
-                ]
-            },
-            {
-                "featureType": "road.local",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "hue": "#FF0300"
-                    },
-                    {
-                        "saturation": -100
-                    },
-                    {
-                        "lightness": 52
-                    },
-                    {
-                        "gamma": 1
-                    }
-                ]
-            },
-            {
-                "featureType": "transit.station",
-                "elementType": "labels.icon",
-                "stylers": [
-                    {
-                        "saturation": "-100"
-                    }
-                ]
-            },
-            {
-                "featureType": "transit.station.rail",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#a4a4a4"
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "hue": "#0078FF"
-                    },
-                    {
-                        "saturation": -13.200000000000003
-                    },
-                    {
-                        "lightness": 2.4000000000000057
-                    },
-                    {
-                        "gamma": 1
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#b7e6dd"
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "saturation": "-100"
-                    }
-                ]
-            }
-        ];
-        var places = [{ lat: 55.749560, lng: 37.641003 }];
-        var mapOptions = {
-            zoom: 14,
-            center: window.innerWidth < 720 ? places[0]  : { lat: 55.7565259, lng: 37.61995118 },
-            zoomControl: true,
-            zoomControlOptions: {
-                style: google.maps.ZoomControlStyle.SMALL,
-                position: google.maps.ControlPosition.RIGHT_BOTTOM
-            },
-            streetViewControl: false,
-            scaleControl: true,
-            panControl: false,
-            mapTypeControl: false,
-            scrollwheel: false,
-            styles: styles
-        };
-        map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        //Если всего один филиал
-        //Если несколько филиалов
-        //var places = [{ lat: 55.74956, lng: 37.641003 }, { lat: 55.75956, lng: 37.651003 }, {
-        //    lat: 55.75956,
-        //    lng: 37.621003
-        //}];
-
-        var markers = [];
-        var icons = {
-            check: { url: './image/icon_maps_checked.svg', labelOrigin: new google.maps.Point(21, 23) },
-            uncheck: { url: './image/icon_maps_unchecked.svg', labelOrigin: new google.maps.Point(21, 23) }
-        };
-        var labels = {
-            uncheck: {
-                text: '',
-                color: '#fff',
-                fontSize: '28px',
-                fontWeight: 'bold'
-            },
-            check: {
-                text: '',
-                color: '#37b39c',
-                fontSize: '28px',
-                fontWeight: 'bold'
-            }
-        };
-        //if (places.length === 1) {
-            markers.push(new google.maps.Marker({
-                position: { lat: 55.74956, lng: 37.641003 },
-                map: map,
-                title: 'Hello World!',
-                icon: { url: './image/icon_maps_named.svg' }
-            }));
-
-        //} else {
-        //    places.forEach(function (place, index) {
-        //        var label = $.extend({}, (index === 0 ? labels.check : labels.uncheck), { text: index + 1 + '' });
-        //
-        //        markers.push({
-        //            position: place,
-        //            map: map,
-        //            title: 'Нужный адрес',
-        //            label: label,
-        //            icon: index === 0 ? icons.check : icons.uncheck
-        //        })
-        //    })
-        //    markers.forEach(function (marker, index) {
-        //        var gMarker = new google.maps.Marker(marker);
-        //
-        //        gMarker.addListener('click', function () {
-        //            changeSelect(Number(gMarker.label.text));
-        //            uncheck(markers);
-        //            check(gMarker);
-        //        })
-        //        markers[index] = gMarker;
-        //    });
-        //    var contacts = $('.gmaps__contacts');
-        //    $('.select-map').on('change', function (e, data) {
-        //        uncheck(markers);
-        //        check(markers[Number(data.id) - 1]);
-        //    })
-        //
-        //    function check(gMarker) {
-        //        var label = $.extend({}, labels.check, { text: gMarker.label.text });
-        //        contacts.addClass('_hidden');
-        //        contacts.eq(Number(gMarker.label.text) - 1).removeClass('_hidden');
-        //        gMarker.setLabel(label);
-        //        gMarker.setIcon(icons.check);
-        //    }
-        //
-        //    function uncheck(gMarkers) {
-        //        gMarkers.forEach(function (gMarker) {
-        //            var label = $.extend({}, labels.uncheck, { text: gMarker.label.text });
-        //
-        //            gMarker.setLabel(label);
-        //            gMarker.setIcon(icons.uncheck);
-        //        })
-        //    }
-        //}
-
-        var bounds = new google.maps.LatLngBounds();
-        for (var i = 0; i < markers.length; i++) {
-            bounds.extend(markers[i].getPosition());
-        }
-        //map.fitBounds
-        //$(window).on('resize', map.fitBounds.bind(map, bounds));
-    }
-
 }
 
 },{}],4:[function(require,module,exports){

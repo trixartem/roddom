@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <meta name=”description” content=”Цель и краткая история создания центра подготовки к родам по методике французского акушера-гинеколога Мишеля Одена, а также руководство центра.”>
-    <meta name="Keywords" content="о центре для беременных, руководство To Be Parents">
-    <title>О центре To Be Parents</title>
+    <meta name=”description” content=”Центр To Be Parents предлагает занятия фитнесом для беременных на любом сроке,
+          которые проводят опытные тренеры в центре Москвы.”>
+    <meta name="Keywords" content="фитнес для беременных москва, гимнастика для беременных">
+    <title>Фитнес для беременных - Москва</title>
 
     <link rel="icon" href="favicon.ico">
 
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="lightslider.css"/>
+
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
@@ -54,7 +57,8 @@
 <main class="body b-container">
     <section class="body__breadcrumb">
         <ol class="breadcrumb" style="margin-bottom: 0;">
-            <li class="active">О Нас</li>
+            <li class="active"><a class="breadcrumb__link" href="#">Услуги</a></li>
+            <li class="active">Фитнес/йога для беременных</li>
         </ol>
     </section>
     <section class="body__carousel">
@@ -65,14 +69,18 @@
                          data-holder-rendered="true">
 
                     <div class="info-card">
-                        <header class="info-card__header">О нас</header>
+                        <header class="info-card__header">Фитнес/йога<br> для беременных</header>
                         <div class="info-card__line"></div>
                         <div class="info-card__text">Задача организации, в особенности же рамки и место обучения кадров
                             требуют определения и уточнения системы обучения кадров, соответствует насущным
                             потребностям. Разнообразный и богатый опыт постоянное информационно-пропагандистское
                             обеспечение нашей деятельности позволяет оценить значение соответствующий условий
-                            активизации. Значимость этих проблем настолько очевидна, что реализация намеченных плановых
-                            заданий
+                            активизации.
+                        </div>
+                        <div class="info-card__button">
+                            <button type="button" data-target="#appointment" data-toggle="modal"
+                                    class="btn btn-primary btn-sm button_size_m">Запись на прием
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -82,8 +90,8 @@
 
                     <div class="info-card_small">
                         <header class="info-card_small__header">
-                            <button type="button" data-target="#appointment"
-                                    class="btn btn-secondary btn-sm button_size_m" data-toggle="modal">Запись на прием
+                            <button type="button" data-target="#appointment" data-toggle="modal"
+                                    class="btn btn-primary btn-sm button_size_m">Запись на прием
                             </button>
                             <span class="info-card_small__header-text">Уточнения системы</span>
                         </header>
@@ -99,20 +107,26 @@
                          data-holder-rendered="true">
 
                     <div class="info-card">
-                        <header class="info-card__header">О нас</header>
+                        <header class="info-card__header">Фитнес/йога<br> для беременных</header>
                         <div class="info-card__line"></div>
                         <div class="info-card__text">Задача организации, в особенности же рамки и место обучения кадров
                             требуют определения и уточнения системы обучения кадров, соответствует насущным
                             потребностям. Разнообразный и богатый опыт постоянное информационно-пропагандистское
                             обеспечение нашей деятельности позволяет оценить значение соответствующий условий
-                            активизации. Значимость этих проблем настолько очевидна, что реализация намеченных плановых
-                            заданий
+                            активизации.
+                        </div>
+                        <div class="info-card__button">
+                            <button type="button" data-target="#appointment" data-toggle="modal"
+                                    class="btn btn-primary btn-sm button_size_m">Запись на прием
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="left control" href="#carousel" role="button" data-slide="prev"><span class="arrow-left" aria-hidden="true"></span></a>
-            <a class="right control" href="#carousel" role="button" data-slide="next"><span class="arrow-right" aria-hidden="true"></span></a>
+            <a class="left control" href="#carousel" role="button" data-slide="prev"><span class="arrow-left"
+                                                                                           aria-hidden="true"></span></a>
+            <a class="right control" href="#carousel" role="button" data-slide="next"><span class="arrow-right"
+                                                                                            aria-hidden="true"></span></a>
         </div>
     </section>
     <section class="body__gallery">
@@ -129,120 +143,376 @@
             </div>
         </div>
     </section>
-    <section class="body__maps col-xs-12">
-        <figure class="gmaps">
-            <div class="gmaps__map" id="map"></div>
-            <section class="gmaps__card">
-                <div class="gmaps__contacts">
-                    <div class="gmaps__address">
-                        <div class="gmaps__header">Адрес:</div>
-                        <div class="gmaps__text">123321, г. Москва,<br>ул. Проспектная, д. 15</div>
-                    </div>
-                    <div class="gmaps__address _lines">
-                        <div class="gmaps__header">Режим работы:</div>
-                        <table class="gmaps__table">
-                            <tr>
-                                <td>Пн-пт:</td>
-                                <td>11:00 &ndash; 20:00</td>
-                            </tr>
-                            <tr>
-                                <td>Вс:</td>
-                                <td>11:00 &ndash; 18:00</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="gmaps__address">
-                        <div class="gmaps__header">Телефон, почта</div>
-                        <div class="gmaps__text">+7 (495) 543-80-70,<br>info@tbp.ru</div>
-                    </div>
-                </div>
-                <div class="gmaps__contacts _hidden">
-                    <div class="gmaps__address">
-                        <div class="gmaps__header">Адрес:</div>
-                        <div class="gmaps__text">123321, г. Москва,<br>ул. Ленина, д. 15</div>
-                    </div>
-                    <div class="gmaps__address _lines">
-                        <div class="gmaps__header">Режим работы:</div>
-                        <table class="gmaps__table">
-                            <tr>
-                                <td>Пн-пт:</td>
-                                <td>11:00 &ndash; 20:00</td>
-                            </tr>
-                            <tr>
-                                <td>Вс:</td>
-                                <td>11:00 &ndash; 18:00</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="gmaps__address">
-                        <div class="gmaps__header">Телефон, почта</div>
-                        <div class="gmaps__text">+7 (495) 543-80-70,<br>info@tbp.ru</div>
-                    </div>
-                </div>
-                <div class="gmaps__contacts _hidden">
-                    <div class="gmaps__address">
-                        <div class="gmaps__header">Адрес:</div>
-                        <div class="gmaps__text">123321, г. Москва,<br>ул. Бажова, д. 15</div>
-                    </div>
-                    <div class="gmaps__address _lines">
-                        <div class="gmaps__header">Режим работы:</div>
-                        <table class="gmaps__table">
-                            <tr>
-                                <td>Пн-пт:</td>
-                                <td>11:00 &ndash; 20:00</td>
-                            </tr>
-                            <tr>
-                                <td>Вс:</td>
-                                <td>11:00 &ndash; 18:00</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="gmaps__address">
-                        <div class="gmaps__header">Телефон, почта</div>
-                        <div class="gmaps__text">+7 (495) 543-80-70,<br>info@tbp.ru</div>
-                    </div>
-                </div>
-            </section>
+    <section class="body__carousel">
+        <div class="text-slider">
+            <div class="text-slide">
+                <a href="#" class="text-slide__header">Задача организации</a>
 
-        </figure>
+                <div class="text-slide__content">Интроекция фундаментально просветляет сублимированный филогенез.
+                    Бихевиоризм, в представлении Морено, отражает объект.
+                </div>
+            </div>
+            <div class="text-slide">
+                <a href="#" class="text-slide__header">Уточнения системы</a>
+
+                <div class="text-slide__content">Интроекция фундаментально просветляет сублимированный филогенез.
+                    Бихевиоризм, в представлении Морено, отражает объект.
+                </div>
+            </div>
+            <div class="text-slide">
+                <a href="#" class="text-slide__header">Повседневная практика</a>
+
+                <div class="text-slide__content">Интроекция фундаментально просветляет сублимированный филогенез.
+                    Бихевиоризм, в представлении Морено, отражает объект.
+                </div>
+            </div>
+            <div class="text-slide">
+                <a href="#" class="text-slide__header">Уточнения системы</a>
+
+                <div class="text-slide__content">Интроекция фундаментально просветляет сублимированный филогенез.
+                    Бихевиоризм, в представлении Морено, отражает объект.
+                </div>
+            </div>
+        </div>
     </section>
-    <section class=" body__creators creators">
-        <h2 class="sub-header creators__title">Создатели</h2>
-
-        <div class="row">
-            <div class="creators__item col-xs-4">
-                <div class="creators__img">
-                    <img class="creators__img" src="image/doctor1.jpg" title="Иванов Виктор Сергеевич">
+    <section class="body__tabs">
+        <div class="tabs">
+            <div class="tabs__head">
+                <div class="tabs__item" data-num="1">
+                    Специалисты
+                    <sup>5</sup>
                 </div>
-
-                <div class="creators__post">Главный директор</div>
-                <div class="creators__name">Иванов<br>Виктор Сергеевич</div>
-                <div class="creators__text">Зенитное часовое число иллюстрирует ионный хвост – север вверху, восток
-                    слева. Скоpость кометы в пеpигелии, оценивая блеск освещенного металического шарика, ищет
-                    популяционный индекс. Популяционный индекс, несмотря на внешние воздействия, выслеживает Каллисто.
+                <div data-url="#" class="tabs__item">
+                    Статьи
+                    <sup>22</sup>
                 </div>
-            </div>
-            <div class="creators__item col-xs-4">
-                <img class="creators__img" src="image/doctor2.jpg" title="Замятина Анна Владимировна">
-
-                <div class="creators__post">Директор</div>
-                <div class="creators__name">Замятина<br>Анна Владимировна</div>
-                <div class="creators__text">Зенитное часовое число иллюстрирует ионный хвост – север вверху, восток
-                    слева. Скоpость кометы в пеpигелии.
+                <div class="tabs__item" data-num="2">
+                    Расписание занятий
+                </div>
+                <div class="tabs__item _checked" data-num="3">
+                    Программа родов
+                </div>
+                <div class="tabs__item" data-num="4">
+                    Список роддомов
                 </div>
             </div>
-            <div class="creators__item col-xs-4">
-                <img class="creators__img" src="image/doctor1.jpg" title="Иванов Виктор Сергеевич">
+            <!--Специалисты-->
+            <div class="tabs__tab">
+                <div class="specialist-slider">
+                    <div class="specialist-slider__item">
+                        <img class="specialist__img" src="image/doctor1.jpg">
 
-                <div class="creators__post">Главный директор</div>
-                <div class="creators__name">Иванов<br>Виктор Сергеевич</div>
-                <div class="creators__text">Зенитное часовое число иллюстрирует ионный хвост – север вверху, восток
-                    слева. Скоpость кометы в пеpигелии, оценивая блеск освещенного металического шарика, ищет
-                    популяционный индекс. Популяционный индекс, несмотря на внешние воздействия, выслеживает Каллисто.
-                    Зенитное часовое число иллюстрирует ионный хвост – север вверху, восток
-                    слева. Скоpость кометы в пеpигелии, оценивая блеск освещенного металического шарика, ищет
-                    популяционный индекс. Популяционный индекс, несмотря на внешние воздействия, выслеживает Каллисто.
+                        <div class="specialist__info">
+                            Замятина<br>Анна Владимировна
+                        </div>
+                    </div>
+                    <div class="specialist-slider__item">
+                        <img class="specialist__img" src="image/doctor1.jpg">
+
+                        <div class="specialist__info">
+                            Замятина<br>Анна Владимировна
+                        </div>
+                    </div>
+                    <div class="specialist-slider__item">
+                        <img class="specialist__img" src="image/doctor1.jpg">
+
+                        <div class="specialist__info">
+                            Замятина<br>Анна Владимировна
+                        </div>
+                    </div>
+                    <div class="specialist-slider__item">
+                        <img class="specialist__img" src="image/doctor1.jpg">
+
+                        <div class="specialist__info">
+                            Замятина<br>Анна Владимировна
+                        </div>
+                    </div>
+                    <div class="specialist-slider__item">
+                        <img class="specialist__img" src="image/doctor1.jpg">
+
+                        <div class="specialist__info">
+                            Замятина<br>Анна Владимировна
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <!--Расписание занятий-->
+            <div class="tabs__tab">
+                <div class="programm">
+                    <a href="#" role="button" class="btn btn-secondary btn-sm">Скачать программу родов<span
+                            class="programm__icon"></span></a>
+                </div>
+            </div>
+            <!--Программа родов-->
+            <div class="tabs__tab _checked">
+                <div class="calendar">
+                    <div class="calendar__left">
+                        <div class="calendar__header">
+                            <span class="calendar__date">Дата</span>
+                            <span class="calendar__switch _time">Время</span>
+                            <span class="calendar__switch _do">Занятия</span>
+                        </div>
+                        <div class="calendar__list">
+                            <div class="calendar__row">
+                                <div class="calendar__date-num">
+                                    <span class="calendar__day">1</span>
+                                    <span class="calendar__month">августа</span>
+                                </div>
+                                <div class="calendar__schedual">
+                                    <table>
+                                        <tr>
+                                            <td class="time">12:30-13:00</td>
+                                            <td class="exercise">Фитнес</td>
+                                            <td class="button">
+                                                <button class="btn btn-secondary btn-sm" data-target="#appointment"
+                                                        data-toggle="modal">Записаться
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time">14:00-15:00</td>
+                                            <td class="exercise">Йога</td>
+                                            <td class="button">
+                                                <button class="btn btn-secondary btn-sm" data-target="#appointment"
+                                                        data-toggle="modal">Записаться
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time">15:30-19:40</td>
+                                            <td class="exercise">Питание</td>
+                                            <td class="button">
+                                                <button class="btn btn-secondary btn-sm" data-target="#appointment"
+                                                        data-toggle="modal">Записаться
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="calendar__line"></div>
+                            <div class="calendar__row">
+                                <div class="calendar__date-num">
+                                    <span class="calendar__day">4</span>
+                                    <span class="calendar__month">сентября</span>
+                                </div>
+                                <div class="calendar__schedual">
+                                    <table>
+                                        <tr>
+                                            <td class="time">12:30-13:00</td>
+                                            <td class="exercise">Фитнес</td>
+                                            <td class="button">
+                                                <button class="btn btn-secondary btn-sm" data-target="#appointment"
+                                                        data-toggle="modal">Записаться
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time">14:00-15:00</td>
+                                            <td class="exercise">Йога</td>
+                                            <td class="button">
+                                                <button class="btn btn-secondary btn-sm" data-target="#appointment"
+                                                        data-toggle="modal">Записаться
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time">15:30-19:40</td>
+                                            <td class="exercise">Питание</td>
+                                            <td class="button">
+                                                <button class="btn btn-secondary btn-sm" data-target="#appointment"
+                                                        data-toggle="modal">Записаться
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="calendar__line"></div>
+                            <div class="calendar__row">
+                                <div class="calendar__date-num">
+                                    <span class="calendar__day">19</span>
+                                    <span class="calendar__month">августа</span>
+                                </div>
+                                <div class="calendar__schedual">
+                                    <table>
+                                        <tr>
+                                            <td class="time">12:30-13:00</td>
+                                            <td class="exercise">Фитнес</td>
+                                            <td class="button">
+                                                <button class="btn btn-secondary btn-sm" data-target="#appointment"
+                                                        data-toggle="modal">Записаться
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time">14:00-15:00</td>
+                                            <td class="exercise">Йога</td>
+                                            <td class="button">
+                                                <button class="btn btn-secondary btn-sm" data-target="#appointment"
+                                                        data-toggle="modal">Записаться
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="time">15:30-19:40</td>
+                                            <td class="exercise">Питание</td>
+                                            <td class="button">
+                                                <button class="btn btn-secondary btn-sm" data-target="#appointment"
+                                                        data-toggle="modal">Записаться
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="calendar__right"><div
+                            class="calendar__body">
+                            <script type="text/template" id="template-calendar">
+                                <div class="clndr-controls">
+                                    <div class="clndr-button clndr-previous-button"></div>
+                                    <div class="month" title="<%= month %> <%= year %>"><%= month %></div>
+                                    <div class="clndr-button clndr-next-button"></div>
+                                </div>
+                                <div class="clndr-grid">
+                                    <div class="days-of-the-week">
+                                        <% _.each(daysOfTheWeek, function(day) { %>
+                                        <div class="header-day"><%= day %></div>
+                                        <% }); %>
+                                        <div class="days">
+                                            <% _.each(days, function(day) { %>
+                                            <div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div>
+                                            <% }); %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Список роддомов-->
+            <div class="tabs__tab">
+                <div class="address-slider">
+                    <div class="address-slider__item">
+                        <img class="address__img" src="https://placehold.it/234x195">
+
+                        <div class="address__info">
+                            <div class="address__metro">Севастопольская</div>
+                            <div class="address__full">123123 г. Москва, ул.Проспектная, д. 15</div>
+                            <table class="address__table">
+                                <tr>
+                                    <td>Пн-пт:</td>
+                                    <td>11:00 &ndash; 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Вс:</td>
+                                    <td>11:00 &ndash; 18:00</td>
+                                </tr>
+                            </table>
+                            <div class="address__phone">+7 (495) 543-80-70</div>
+                        </div>
+                    </div>
+                    <div class="address-slider__item">
+                        <img class="address__img" src="https://placehold.it/234x195">
+
+                        <div class="address__info">
+                            <div class="address__metro">Севастопольская</div>
+                            <div class="address__full">123123 г. Москва, ул.Проспектная, д. 15</div>
+                            <table class="address__table">
+                                <tr>
+                                    <td>Пн-пт:</td>
+                                    <td>11:00 &ndash; 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Вс:</td>
+                                    <td>11:00 &ndash; 18:00</td>
+                                </tr>
+                            </table>
+                            <div class="address__phone">+7 (495) 543-80-70</div>
+                        </div>
+                    </div>
+                    <div class="address-slider__item">
+                        <img class="address__img" src="https://placehold.it/234x195">
+
+                        <div class="address__info">
+                            <div class="address__metro">Севастопольская</div>
+                            <div class="address__full">123123 г. Москва, ул.Проспектная, д. 15</div>
+                            <table class="address__table">
+                                <tr>
+                                    <td>Пн-пт:</td>
+                                    <td>11:00 &ndash; 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Вс:</td>
+                                    <td>11:00 &ndash; 18:00</td>
+                                </tr>
+                            </table>
+                            <div class="address__phone">+7 (495) 543-80-70</div>
+                        </div>
+                    </div>
+                    <div class="address-slider__item">
+                        <img class="address__img" src="https://placehold.it/234x195">
+
+                        <div class="address__info">
+                            <div class="address__metro">Севастопольская</div>
+                            <div class="address__full">123123 г. Москва, ул.Проспектная, д. 15</div>
+                            <table class="address__table">
+                                <tr>
+                                    <td>Пн-пт:</td>
+                                    <td>11:00 &ndash; 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Вс:</td>
+                                    <td>11:00 &ndash; 18:00</td>
+                                </tr>
+                            </table>
+                            <div class="address__phone">+7 (495) 543-80-70</div>
+                        </div>
+                    </div>
+                    <div class="address-slider__item">
+                        <img class="address__img" src="https://placehold.it/234x195">
+
+                        <div class="address__info">
+                            <div class="address__metro">Севастопольская</div>
+                            <div class="address__full">123123 г. Москва, ул.Проспектная, д. 15</div>
+                            <table class="address__table">
+                                <tr>
+                                    <td>Пн-пт:</td>
+                                    <td>11:00 &ndash; 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Вс:</td>
+                                    <td>11:00 &ndash; 18:00</td>
+                                </tr>
+                            </table>
+                            <div class="address__phone">+7 (495) 543-80-70</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="body__share">
+        <div class="share-wrapper">
+            <div class="share-wrapper__container">
+                <div class="share _init"></div>
+                <span data-placement="right" data-toggle="popover" id="share-more"
+                      title="Показать больше соцсетей"
+                      class="share__link _more"></span>
+            </div>
+            <div class="share-wrapper__header">Поделиться</div>
+        </div>
+    </section>
+    <section class="body__promo">
+        <div class="promo">
+            <img src="https://placehold.it/934x170" width="934">
+            <a class="promo__header">Две услуги по цене одной</a>
+
+            <div class="promo__button">
+                <button class="btn btn-primary btn-sm" data-target="#appointment" data-toggle="modal">Запись на прием
+                </button>
             </div>
         </div>
     </section>
@@ -355,10 +625,16 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="JS/moment.min.js"></script>
+<script src="JS/underscore-min.js"></script>
+<script src="JS/clndr.min.js"></script>
+<script src="lightslider.js"></script>
+
 <script src="JS/iscroll.js"></script>
+<script src="JS/share.js"></script>
+<script src="JS/tether.min.js"></script>
+<script src="bootstrap.min.js"></script>
 <script src="JS/index.js"></script>
-<script defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7png4T0hdBFqJ40gtLkfHH6vkvI-Vh-k&callback=initMap"></script>
 </body>
 </html>
