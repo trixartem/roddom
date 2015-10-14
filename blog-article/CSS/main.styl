@@ -160,11 +160,20 @@ body {
         }
         transition: opacity .2s ease-out;
     }
-    &._white &__like,
-    &._white &__messages,
-    &._white &__view,
+    &._white &__like {
+        background-position: 279px -437px;
+    }
+    &._white &__messages {
+        background-position: 230px -437px;
+
+    }
+    &._white &__view {
+        background-position: 188px -437px;
+
+    }
     &._white &__share {
-        background-position-y: -437px;
+        background-position: 131px -437px;
+
     }
     &._white &__counter {
         color: #fff;
@@ -489,22 +498,22 @@ body {
 .share {
     display: inline-block;
     &__item &__link._twi {
-        background-position-y: -87px;
+        background-position: 0 -87px;
     }
     &__item &__link._vk {
-        background-position-y: -58px;
+        background-position: 0 -58px;
     }
     &__item &__link._fb {
-        background-position-y: 2px;
+        background-position: 0 2px;
     }
     &__item &__link._mail {
-        background-position-y: -29px;
+        background-position: 0 -29px;
     }
     &__item &__link._odkl {
-        background-position-y: -116px;
+        background-position: 0 -116px;
     }
     &__item &__link._gplus {
-        background-position-y: -144px;
+        background-position: 0 -144px;
     }
     &__link._more {
         background-image: url(../image/icons.svg);
@@ -512,7 +521,6 @@ body {
         background-size: 268px;
         cursor: pointer;
     }
-
 
     &__item {
         display: inline-block;
@@ -526,7 +534,7 @@ body {
         margin-left: 20px;
     }
     &__item._column {
-       display: block;
+        display: block;
         margin: 0 0 10px 0;
     }
     &__link {
@@ -541,7 +549,7 @@ body {
         background-image: url(../image/b-share_counter_small.png);
         background-repeat: no-repeat;
         opacity: 1;
-        background-position-x: 1px;
+        background-position: 1px 0;
         transition: opacity .2s ease;
 
         &:hover {
