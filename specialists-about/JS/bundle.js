@@ -1,4 +1,6 @@
 var select = require('./select');
+require('./form')();
+require('./form-comment')();
 select();
 function getShare(obj) {
     var u = obj.url,
@@ -114,6 +116,16 @@ $('body').on('click', function (e) {
         }
     });
 });
+
+$('.spec').each(function () {
+    var spec = $(this);
+    spec.find('.book').click(function () {
+        $('#spec-name').val(spec.data('name'));
+    });
+    spec.find('.spec__comments-link').click(function () {
+        $('#comment-spec-name').val(spec.data('name'));
+    });
+})
 
 
 

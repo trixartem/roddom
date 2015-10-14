@@ -13,3 +13,5 @@ https://clck.ru/9b6j2
 [Пятый макет](https://rawgit.com/trixartem/roddom/master/roddoma/index.html)
 
 [Шестой макет](https://rawgit.com/trixartem/roddom/master/services/index.html)
+
+[Седьмой макет](https://rawgit.com/trixartem/roddom/master/specialists-about/index.html)

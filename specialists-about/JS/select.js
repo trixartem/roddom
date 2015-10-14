@@ -3,8 +3,8 @@ module.exports = function () {
     $('select').each(function () {
 
         // Cache the number of options
-        var $this = $(this),
-            numberOfOptions = $(this).children('option').length;
+        var $this = $(this);
+        var children = $(this).children();
 
         // Hides the select element
         $this.addClass('s-hidden');
@@ -19,40 +19,60 @@ module.exports = function () {
         var $styledSelect = $this.next('div.styledSelect');
 
         // Show the first select option in the styled div
-        $styledSelect.text($this.children('option').eq(0).text());
+        $styledSelect.text($this.find('option').filter('[checked]').eq(0).text());
 
         // Insert an unordered list after the styled div and also cache the list
-        var $list = $('<ul />', {
+        var $list = $('<div />', {
             'class': 'options hidden'
         }).insertAfter($styledSelect);
 
-        // Insert a list item into the unordered list for each select option
-        for (var i = 0; i < numberOfOptions; i++) {
-            $('<li />', {
-                text: $this.children('option').eq(i).text(),
-                rel: $this.children('option').eq(i).val()
-            }).appendTo($list);
-        }
+        children.each(function (i, e) {
+            console.log($(e).prop("tagName"));
+            if ($(e).prop("tagName") === 'OPTION') {
+                $list.append($('<div />', {
+                    text: $(e).text(),
+                    rel: $(e).val(),
+                    'class': 'select__item'
+                }));
+            } else if ($(e).prop("tagName") === 'OPTGROUP') {
+                var gr = $('<div class="select__group"/>');
+
+                console.log($(e).attr('label'));
+                gr.append($('<div />', {
+                    html: $(e).attr('label'),
+                    'class': 'select__group-name'
+                }));
+                var grChild = $(e).children();
+                grChild.each(function () {
+                    gr.append($('<div />', {
+                        text: $(this).text(),
+                        rel: $(this).val(),
+                        'class': 'select__item'
+                    }));
+                })
+                $list.append(gr);
+            }
+        });
 
         // Cache the list items
-        var $listItems = $list.children('li');
+        var $listItems = $list.find('.select__item');
 
         // Show the unordered list when the styled div is clicked (also hides it if the div is clicked again)
         $styledSelect.click(function (e) {
             e.stopPropagation();
             var $this = $(this);
-            var $list = $this.next('ul.options');
+            var $list = $this.next('.options');
             $('div.styledSelect.active').each(function () {
                 if ($this[0] === $(this)[0]) {
                     return;
                 }
                 $(this)
                     .removeClass('active')
-                    .next('ul.options')
+                    .next('.options')
                     .addClass('hidden');
             });
 
-            if(!$this.hasClass('active')) {
+            if (!$this.hasClass('active')) {
                 if ($list.width() > $this.width() + 27) {
                     $this.addClass('smaller');
                     $list.removeClass('smaller');

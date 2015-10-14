@@ -20,7 +20,6 @@
     <meta name=”twitter:image” content=””>
 
     <link rel="stylesheet" href="bootstrap.min.css">
-    <!--<link rel="stylesheet" href="../bootstrap-4.0.0-alpha/dist/css/bootstrap.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <link rel="stylesheet" href="CSS/index.css">
 </head>
@@ -64,240 +63,74 @@
     <section class="body__breadcrumb">
         <ol class="breadcrumb" style="margin-bottom: 0;">
             <li class="active"><a class="breadcrumb__link" href="#">Главная</a></li>
-            <li class="active">Блог</li>
+            <li class="active">Специалисты</li>
         </ol>
     </section>
     <div class="body__main">
-        <h1 class="body__header">Последние статьи блога</h1>
+        <h1 class="body__header">Специалисты</h1>
         <section class="body__sort">
             <article class="sort">
-                <span class="sort__text">Сортировать по:</span>
+                <span class="sort__text">Поиск по специальности: </span>
 
                 <div class="sort__select">
                     <select id="selectbox1">
-                        <option value="">рубрика</option>
-                        <option value="aye">по возрастанию</option>
-                        <option value="eh">по убыванию</option>
-                        <option value="ooh">еще как-нибудь</option>
+                        <option>все</option>
+                        <optgroup label="Акушеры">
+                            <option value="" checked>Акушеры–гинекологи</option>
+                            <option value="aye">Другие акушеры</option>
+                        </optgroup>
+                        <optgroup label="Массажисты">
+                            <option value="">Массажисты1</option>
+                            <option value="">Массажисты2</option>
+                        </optgroup>
                     </select>
                 </div>
-                <div class="sort__select">
-                    <select id="selectbox2">
-                        <option value="">дата</option>
-                        <option value="aye">по возрастанию</option>
-                        <option value="eh"по убыванию</option>
-                        <option value="ooh">еще как-нибудь</option>
-                    </select>
-                </div>
-                <a class="sort__link" href="#view">число просмотров</a>
-                <a class="sort__link" href="#range">рейтинг</a>
-                <a class="sort__link" href="#comments">число комментариев</a>
             </article>
         </section>
         <section class="body__list">
-            <article class="post">
-                <a href="#" class="post__link">
-                    <img class="post__img" src="image/palceholder.png">
-
-                    <h3 class="post__header">Питание во время беременности</h3>
+            <div class="spec" data-name="Замятина Анна Владимировна">
+                <div class="spec__buttons">
+                    <button class="btn btn-primary btn-sm book" data-target="#appointment"
+                                           data-toggle="modal">Запись на прием</button>
+                    <a href='#' class="btn btn-primary btn-sm grey">Статьи в блоге</a>
+                    <a href='#' class="btn btn-primary btn-sm comments">Отзывы</a><br>
+                    <a class="spec__comments-link" data-target="#create-comment"
+                       data-toggle="modal">Оставить отзыв</a>
+                </div>
+                <a class="spec__link" href="">
+                    <img src="https://placehold.it/245x183">
                 </a>
-                <a href="#parts" class="post__category">Рубрика</a>
 
-                <div class="post__preview">Богатство мировой литературы от Платона до Ортеги-и-Гассета свидетельствует о
-                    том, что меланхолик заканчивает эдипов комплекс. Аполлоновское начало продолжает элитарный
-                    диахронический подход, что-то
-                </div>
-                <time class="post__date">01 июня 2015</time>
-                <div class="post__likes">
-                    <div class="icon">
-                        <div class="icon__wrap">
-                        <span class="icon__item">
-                            <span title="Нравится" class="icon__like"></span>
-                            <span class="icon__counter">12</span>
-                        </span>
-                        <span class="icon__item">
-                            <a title="Оставить комментарий" href="#comments" class="icon__messages"></a>
-                            <span class="icon__counter">3</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Число просмотров" class="icon__view"></span>
-                            <span class="icon__counter">1923</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Поделиться" class="icon__share  _popover" data-toggle="popover"
-                                  data-placement="right" data-title="title" data-img="http://img.ru"
-                                  data-desc="desc" data-url="yandex.ru"></span>
-                        </span>
-                        </div>
+                <div class="spec__info">
+                    <div class="spec__profile">
+                        <a href="#" class="spec__profile-link">Cпециализация,</a>&nbsp;
+                        <a href="#" class="spec__profile-link">специализация</a>
                     </div>
+                    <div class="spec__name">Замятина<br> Анна Владимировна</div>
                 </div>
-            </article>
-
-            <article class="post">
-                <a href="#" class="post__link">
-                    <img class="post__img" src="image/palceholder.png">
-
-                    <h3 class="post__header">Питание во время беременности</h3>
+            </div>
+            <div class="spec" data-name="Иванов Виктор Сергеевич">
+                <div class="spec__buttons">
+                    <button class="btn btn-primary btn-sm book" data-target="#appointment"
+                            data-toggle="modal">Запись на прием
+                    </button>
+                    <a href='#' class="btn btn-primary btn-sm grey">Статьи в блоге</a>
+                    <a href='#' class="btn btn-primary btn-sm comments">Отзывы</a><br>
+                    <a class="spec__comments-link" data-target="#create-comment"
+                       data-toggle="modal">Оставить отзыв</a>
+                </div>
+                <a class="spec__link" href="">
+                    <img src="https://placehold.it/245x183">
                 </a>
-                <a href="#parts" class="post__category">Рубрика</a>
 
-                <div class="post__preview">Богатство мировой литературы от Платона до Ортеги-и-Гассета свидетельствует о
-                    том,
-                    что меланхолик заканчивает эдипов комплекс. Аполлоновское начало продолжает элитарный диахронический
-                    подход,
-                    что-то
-                </div>
-                <time class="post__date">01 июня 2015</time>
-                <div class="post__likes">
-                    <div class="icon">
-                        <div class="icon__wrap">
-                        <span class="icon__item">
-                            <span title="Нравится" class="icon__like"></span>
-                            <span class="icon__counter">12</span>
-                        </span>
-                        <span class="icon__item">
-                            <a title="Оставить комментарий" href="#comments" class="icon__messages"></a>
-                            <span class="icon__counter">3</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Число просмотров" class="icon__view"></span>
-                            <span class="icon__counter">1923</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Поделиться" class="icon__share  _popover" data-toggle="popover"
-                                  data-placement="right" data-title="title" data-img="http://img.ru"
-                                  data-desc="desc" data-url="yandex.ru"></span>
-                        </span>
-                        </div>
+                <div class="spec__info">
+                    <div class="spec__profile">
+                        <a href="#" class="spec__profile-link">Cпециализация,</a>&nbsp;
+                        <a href="#" class="spec__profile-link">специализация</a>
                     </div>
+                    <div class="spec__name">Иванов<br> Виктор Сергеевич</div>
                 </div>
-            </article>
-            <article class="post">
-                <a href="#" class="post__link">
-                    <img class="post__img" src="image/palceholder.png">
-
-                    <h3 class="post__header">Питание во время беременности</h3>
-                </a>
-                <a href="#parts" class="post__category">Рубрика</a>
-
-                <div class="post__preview">Богатство мировой литературы от Платона до Ортеги-и-Гассета свидетельствует о
-                    том,
-                    что меланхолик заканчивает эдипов комплекс. Аполлоновское начало продолжает элитарный диахронический
-                    подход,
-                    что-то
-                </div>
-                <time class="post__date">01 июня 2015</time>
-                <div class="post__likes">
-                    <div class="icon">
-                        <div class="icon__wrap">
-                        <span class="icon__item">
-                            <span title="Нравится" class="icon__like"></span>
-                            <span class="icon__counter">12</span>
-                        </span>
-                        <span class="icon__item">
-                            <a title="Оставить комментарий" href="#comments" class="icon__messages"></a>
-                            <span class="icon__counter">3</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Число просмотров" class="icon__view"></span>
-                            <span class="icon__counter">1923</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Поделиться" class="icon__share  _popover" data-toggle="popover"
-                                  data-placement="right" data-title="title" data-img="http://img.ru"
-                                  data-desc="desc" data-url="yandex.ru"></span>
-                        </span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <a href="#" class="post__link">
-                    <img class="post__img" src="image/palceholder.png">
-
-                    <h3 class="post__header">Питание во время беременности</h3>
-                </a>
-                <a href="#parts" class="post__category">Рубрика</a>
-
-                <div class="post__preview">Богатство мировой литературы от Платона до Ортеги-и-Гассета свидетельствует о
-                    том,
-                    что меланхолик заканчивает эдипов комплекс. Аполлоновское начало продолжает элитарный диахронический
-                    подход,
-                    что-то
-                </div>
-                <time class="post__date">01 июня 2015</time>
-                <div class="post__likes">
-                    <div class="icon">
-                        <div class="icon__wrap">
-                        <span class="icon__item">
-                            <span title="Нравится" class="icon__like"></span>
-                            <span class="icon__counter">12</span>
-                        </span>
-                        <span class="icon__item">
-                            <a title="Оставить комментарий" href="#comments" class="icon__messages"></a>
-                            <span class="icon__counter">3</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Число просмотров" class="icon__view"></span>
-                            <span class="icon__counter">1923</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Поделиться" class="icon__share  _popover" data-toggle="popover"
-                                  data-placement="right" data-title="title" data-img="http://img.ru"
-                                  data-desc="desc" data-url="yandex.ru"></span>
-                        </span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <a href="#" class="post__link">
-                    <img class="post__img" src="image/palceholder.png">
-
-                    <h3 class="post__header">Питание во время беременности</h3>
-                </a>
-                <a href="#parts" class="post__category">Рубрика</a>
-
-                <div class="post__preview">Богатство мировой литературы от Платона до Ортеги-и-Гассета свидетельствует о
-                    том,
-                    что меланхолик заканчивает эдипов комплекс. Аполлоновское начало продолжает элитарный диахронический
-                    подход,
-                    что-то
-                </div>
-                <time class="post__date">01 июня 2015</time>
-                <div class="post__likes">
-                    <div class="icon">
-                        <div class="icon__wrap">
-                        <span class="icon__item">
-                            <span title="Нравится" class="icon__like"></span>
-                            <span class="icon__counter">12</span>
-                        </span>
-                        <span class="icon__item">
-                            <a title="Оставить комментарий" href="#comments" class="icon__messages"></a>
-                            <span class="icon__counter">3</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Число просмотров" class="icon__view"></span>
-                            <span class="icon__counter">1923</span>
-                        </span>
-                        <span class="icon__item">
-                            <span title="Поделиться" class="icon__share  _popover" data-toggle="popover"
-                                  data-placement="right" data-title="title" data-img="http://img.ru"
-                                  data-desc="desc" data-url="yandex.ru"></span>
-                        </span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section class="body__pagination">
-            <nav>
-              <ul class="pagination">
-                <li><a href="#">1</a></li>
-                <li class="active"><span >2</span></li>
-                <li><a href="#">3</a></li>
-              </ul>
-            </nav>
+            </div>
         </section>
     </div>
 </main>
@@ -355,9 +188,116 @@
         </div>
     </div>
 </footer>
+<div class="modal fade" id="create-comment" tabindex="-1" role="dialog" aria-labelledby="create-comment"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Ваш отзыв</h4>
+            </div>
+            <div class="modal-body">
+                <form id="comment-form">
+                    <div class="form-group">
+                        <label for="comment-client-name" class="control-label">ФИО специалиста:</label>
+                        <input type="text" class="form-control" required id="comment-spec-name"
+                               placeholder="Иванов Иван Иванович">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-client-name" class="control-label">Фамили Имя Отчество:</label>
+                        <input type="text" class="form-control" required id="comment-client-name"
+                               placeholder="Ваше Фамили Имя Отчество">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-full" class="control-label">Комментарий:</label>
+                        <textarea class="form-control" id="comment-full"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Отмена</button>
+                <button type="button" disabled id="comment-submit-form" class="btn btn-primary btn-sm" type="submit">
+                    Записаться
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="appointment" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Запись на прием</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <div class="form-group">
+                        <label for="spec-name" class="control-label">Cпециалист:</label>
+                        <input type="text" class="form-control" required id="spec-name"
+                                                       placeholder="Иванов Иван Иванович">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-name" class="control-label">Фамили Имя Отчество:</label>
+                        <input type="text" class="form-control" required id="client-name"
+                               placeholder="Ваше Фамили Имя Отчество">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <label for="date" class="control-label">Дата:</label>
+                                <input type="date" class="form-control" required id="date" placeholder="Дата записи">
+                            </div>
+                            <div class="col-xs-4">
+                                <label for="time" class="control-label">Время:</label>
+                                <input type="time" class="form-control" required id="time" placeholder="Время">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="control-label">Ваш номер телефона:</label>
+                        <input type="phone" class="form-control" required id="phone" placeholder="+7(495)1231212">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment" class="control-label">Комментарий:</label>
+                        <textarea class="form-control" id="comment"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Отмена</button>
+                <button type="button" disabled id="submit-form" class="btn btn-primary btn-sm" type="submit">
+                    Записаться
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="success">
+                    <div class="success__img"></div>
+                    <div class="success__message">Заявка отправлена.
+                        <br>Наш специалист свяжется с Вами в течение 30 минут
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="JS/tether.min.js"></script>
-<!--<script src="../bootstrap-4.0.0-alpha/dist/js/bootstrap.js"></script>-->
 <script src="bootstrap.min.js"></script>
 <script src="JS/index.js"></script>
 </body>

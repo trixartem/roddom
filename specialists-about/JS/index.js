@@ -1,5 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var select = require('./select');
+require('./form')();
+require('./form-comment')();
 select();
 function getShare(obj) {
     var u = obj.url,
@@ -116,17 +118,185 @@ $('body').on('click', function (e) {
     });
 });
 
+$('.spec').each(function () {
+    var spec = $(this);
+    spec.find('.book').click(function () {
+        $('#spec-name').val(spec.data('name'));
+    });
+    spec.find('.spec__comments-link').click(function () {
+        $('#comment-spec-name').val(spec.data('name'));
+    });
+})
 
 
 
-},{"./select":2}],2:[function(require,module,exports){
+
+},{"./form":3,"./form-comment":2,"./select":4}],2:[function(require,module,exports){
+module.exports = function () {
+    var submitForm = $('#comment-submit-form');
+    var clientName = $('#comment-client-name');
+    var specName = $('#comment-spec-name');
+    var formIsValid = {
+        specName: !!specName.val(),
+        clientName: false
+    }
+    function checkSpecName () {
+        if (specName.val() === '') {
+            formIsValid.specName = false;
+            toggleInput(specName, false)
+        } else {
+            formIsValid.specName = true;
+            toggleInput(specName, true)
+        }
+        checkForms();
+    }
+    specName.on('input', function () {
+        checkSpecName();
+    });
+    clientName.on('input', function () {
+        if (clientName.val() === '') {
+            formIsValid.clientName = false;
+            toggleInput(clientName, false)
+        } else {
+            formIsValid.clientName = true;
+            toggleInput(clientName, true)
+        }
+        checkForms();
+    });
+    $('#create-comment').on('show.bs.modal', function () {
+        checkSpecName();
+    })
+    function checkForms() {
+        var allForm = Object.keys(formIsValid).length
+        var counter = 0;
+        for (var key in formIsValid) {
+            formIsValid[key] && ++counter;
+        }
+        if (counter === allForm) {
+            submitForm.prop('disabled', false);
+        } else {
+            submitForm.prop('disabled', true);
+        }
+    }
+
+    function toggleInput(elem, isSuccess) {
+        var group = elem.parent('.form-group');
+        if (isSuccess) {
+            group.removeClass('has-error');
+            group.addClass('has-success');
+            elem.addClass('form-control-success');
+            elem.removeClass('form-control-error');
+        } else {
+            group.addClass('has-error');
+            group.removeClass('has-success');
+            elem.addClass('form-control-error');
+            elem.removeClass('form-control-success');
+        }
+    }
+}
+
+},{}],3:[function(require,module,exports){
+module.exports = function () {
+    var submitForm = $('#submit-form');
+    var clientName = $('#client-name');
+    var specName = $('#spec-name');
+    var phone = $('#phone');
+    var formIsValid = {
+        specName: !!specName.val(),
+        clientName: false,
+        phone: false
+    }
+
+    function checkSpecName() {
+        if (specName.val() === '') {
+            formIsValid.specName = false;
+            toggleInput(specName, false)
+        } else {
+            formIsValid.specName = true;
+            toggleInput(specName, true)
+        }
+        checkForms();
+    }
+
+    specName.on('input', function () {
+        checkSpecName()
+    });
+    clientName.on('input', function () {
+        if (clientName.val() === '') {
+            formIsValid.clientName = false;
+            toggleInput(clientName, false)
+        } else {
+            formIsValid.clientName = true;
+            toggleInput(clientName, true)
+        }
+        checkForms();
+    });
+    clientName.on('input', function () {
+        if (clientName.val() === '') {
+            formIsValid.clientName = false;
+            toggleInput(clientName, false)
+        } else {
+            formIsValid.clientName = true;
+            toggleInput(clientName, true)
+        }
+        checkForms();
+    });
+    $('#appointment').on('show.bs.modal', function () {
+        checkSpecName();
+    })
+    submitForm.click(function () {
+        $('#appointment').modal('hide');
+        $('#success').modal('show');
+    });
+    phone.on('input', function () {
+        var phoneIsValid = ValidPhone(phone.val())
+        toggleInput(phone, phoneIsValid)
+        formIsValid.phone = phoneIsValid;
+        checkForms();
+    });
+
+    function ValidPhone(phoneNumber) {
+        var re = /^\+?\d[\d\(\)\ -]{4,14}\d$/;
+        return re.test(phoneNumber);
+    }
+
+    function checkForms() {
+        var allForm = Object.keys(formIsValid).length
+        var counter = 0;
+        for (var key in formIsValid) {
+            formIsValid[key] && ++counter;
+        }
+        if (counter === allForm) {
+            $('#submit-form').prop('disabled', false);
+        } else {
+            $('#submit-form').prop('disabled', true);
+        }
+    }
+
+    function toggleInput(elem, isSuccess) {
+        var group = elem.parent('.form-group');
+        if (isSuccess) {
+            group.removeClass('has-error');
+            group.addClass('has-success');
+            elem.addClass('form-control-success');
+            elem.removeClass('form-control-error');
+        } else {
+            group.addClass('has-error');
+            group.removeClass('has-success');
+            elem.addClass('form-control-error');
+            elem.removeClass('form-control-success');
+        }
+    }
+}
+
+},{}],4:[function(require,module,exports){
 module.exports = function () {
     // Iterate over each select element
     $('select').each(function () {
 
         // Cache the number of options
-        var $this = $(this),
-            numberOfOptions = $(this).children('option').length;
+        var $this = $(this);
+        var children = $(this).children();
 
         // Hides the select element
         $this.addClass('s-hidden');
@@ -141,40 +311,60 @@ module.exports = function () {
         var $styledSelect = $this.next('div.styledSelect');
 
         // Show the first select option in the styled div
-        $styledSelect.text($this.children('option').eq(0).text());
+        $styledSelect.text($this.find('option').filter('[checked]').eq(0).text());
 
         // Insert an unordered list after the styled div and also cache the list
-        var $list = $('<ul />', {
+        var $list = $('<div />', {
             'class': 'options hidden'
         }).insertAfter($styledSelect);
 
-        // Insert a list item into the unordered list for each select option
-        for (var i = 0; i < numberOfOptions; i++) {
-            $('<li />', {
-                text: $this.children('option').eq(i).text(),
-                rel: $this.children('option').eq(i).val()
-            }).appendTo($list);
-        }
+        children.each(function (i, e) {
+            console.log($(e).prop("tagName"));
+            if ($(e).prop("tagName") === 'OPTION') {
+                $list.append($('<div />', {
+                    text: $(e).text(),
+                    rel: $(e).val(),
+                    'class': 'select__item'
+                }));
+            } else if ($(e).prop("tagName") === 'OPTGROUP') {
+                var gr = $('<div class="select__group"/>');
+
+                console.log($(e).attr('label'));
+                gr.append($('<div />', {
+                    html: $(e).attr('label'),
+                    'class': 'select__group-name'
+                }));
+                var grChild = $(e).children();
+                grChild.each(function () {
+                    gr.append($('<div />', {
+                        text: $(this).text(),
+                        rel: $(this).val(),
+                        'class': 'select__item'
+                    }));
+                })
+                $list.append(gr);
+            }
+        });
 
         // Cache the list items
-        var $listItems = $list.children('li');
+        var $listItems = $list.find('.select__item');
 
         // Show the unordered list when the styled div is clicked (also hides it if the div is clicked again)
         $styledSelect.click(function (e) {
             e.stopPropagation();
             var $this = $(this);
-            var $list = $this.next('ul.options');
+            var $list = $this.next('.options');
             $('div.styledSelect.active').each(function () {
                 if ($this[0] === $(this)[0]) {
                     return;
                 }
                 $(this)
                     .removeClass('active')
-                    .next('ul.options')
+                    .next('.options')
                     .addClass('hidden');
             });
 
-            if(!$this.hasClass('active')) {
+            if (!$this.hasClass('active')) {
                 if ($list.width() > $this.width() + 27) {
                     $this.addClass('smaller');
                     $list.removeClass('smaller');
