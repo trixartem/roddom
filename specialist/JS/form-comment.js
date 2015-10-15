@@ -1,24 +1,9 @@
 module.exports = function () {
     var submitForm = $('#comment-submit-form');
     var clientName = $('#comment-client-name');
-    var specName = $('#comment-spec-name');
     var formIsValid = {
-        specName: !!specName.val(),
         clientName: false
     }
-    function checkSpecName () {
-        if (specName.val() === '') {
-            formIsValid.specName = false;
-            toggleInput(specName, false)
-        } else {
-            formIsValid.specName = true;
-            toggleInput(specName, true)
-        }
-        checkForms();
-    }
-    specName.on('input', function () {
-        checkSpecName();
-    });
     clientName.on('input', function () {
         if (clientName.val() === '') {
             formIsValid.clientName = false;
@@ -29,9 +14,6 @@ module.exports = function () {
         }
         checkForms();
     });
-    $('#create-comment').on('show.bs.modal', function () {
-        checkSpecName();
-    })
     function checkForms() {
         var allForm = Object.keys(formIsValid).length
         var counter = 0;

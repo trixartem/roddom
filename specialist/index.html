@@ -168,7 +168,7 @@
         <article class="sort">
             <span class="sort__text">Сортировать по:</span>
 
-            <a class="sort__link" >все</a>
+            <a class="sort__link">все</a>
             <a class="sort__link" href="#range">автор статей</a>
             <a class="sort__link" href="#comments">специалист рекомендует</a>
             <a class="sort__link" href="#thems">похожая тематика</a>
@@ -440,9 +440,12 @@
             <div class="modal-body">
                 <form id="comment-form">
                     <div class="form-group">
-                        <label for="comment-spec-name" class="control-label">Специалист:</label>
-                        <input type="text" class="form-control" required id="comment-spec-name"
-                               placeholder="ФИО" value="Иванова Ирина Сергеевна">
+                        <label for="comment-spec-name">Специалист:</label>
+                        <select class="form-control" id="comment-spec-name">
+                            <option value="0" selected>Иванова Ирина Сергеевна</option>
+                            <option value="1">Иванова Юлия Сергеевна</option>
+                            <option value="2">Иванова Кристина Сергеевна</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="comment-client-name" class="control-label">Фамили Имя Отчество:</label>
@@ -477,9 +480,12 @@
             <div class="modal-body">
                 <form id="form">
                     <div class="form-group">
-                        <label for="spec-name" class="control-label">Специалист:</label>
-                        <input type="text" class="form-control" required id="spec-name"
-                               placeholder="ФИО" value="Иванова Ирина Сергеевна">
+                        <label for="comment-roddom">Специалист:</label>
+                        <select class="form-control" id="comment-roddom">
+                            <option value="0" selected>Иванова Ирина Сергеевна</option>
+                            <option value="1">Иванова Юлия Сергеевна</option>
+                            <option value="2">Иванова Кристина Сергеевна</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="client-name" class="control-label">Фамили Имя Отчество:</label>

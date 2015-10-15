@@ -33,16 +33,7 @@ module.exports = function () {
         }
         checkForms();
     });
-    clientName.on('input', function () {
-        if (clientName.val() === '') {
-            formIsValid.clientName = false;
-            toggleInput(clientName, false)
-        } else {
-            formIsValid.clientName = true;
-            toggleInput(clientName, true)
-        }
-        checkForms();
-    });
+
     $('#appointment').on('show.bs.modal', function () {
         checkSpecName();
     })

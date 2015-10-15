@@ -214,24 +214,9 @@ select.each(function () {
 module.exports = function () {
     var submitForm = $('#comment-submit-form');
     var clientName = $('#comment-client-name');
-    var specName = $('#comment-spec-name');
     var formIsValid = {
-        specName: !!specName.val(),
         clientName: false
     }
-    function checkSpecName () {
-        if (specName.val() === '') {
-            formIsValid.specName = false;
-            toggleInput(specName, false)
-        } else {
-            formIsValid.specName = true;
-            toggleInput(specName, true)
-        }
-        checkForms();
-    }
-    specName.on('input', function () {
-        checkSpecName();
-    });
     clientName.on('input', function () {
         if (clientName.val() === '') {
             formIsValid.clientName = false;
@@ -242,9 +227,6 @@ module.exports = function () {
         }
         checkForms();
     });
-    $('#create-comment').on('show.bs.modal', function () {
-        checkSpecName();
-    })
     function checkForms() {
         var allForm = Object.keys(formIsValid).length
         var counter = 0;
@@ -278,28 +260,12 @@ module.exports = function () {
 module.exports = function () {
     var submitForm = $('#submit-form');
     var clientName = $('#client-name');
-    var specName = $('#spec-name');
     var phone = $('#phone');
     var formIsValid = {
-        specName: !!specName.val(),
         clientName: false,
         phone: false
     }
 
-    function checkSpecName() {
-        if (specName.val() === '') {
-            formIsValid.specName = false;
-            toggleInput(specName, false)
-        } else {
-            formIsValid.specName = true;
-            toggleInput(specName, true)
-        }
-        checkForms();
-    }
-
-    specName.on('input', function () {
-        checkSpecName()
-    });
     clientName.on('input', function () {
         if (clientName.val() === '') {
             formIsValid.clientName = false;
@@ -311,9 +277,6 @@ module.exports = function () {
         checkForms();
     });
     
-    $('#appointment').on('show.bs.modal', function () {
-        checkSpecName();
-    })
     submitForm.click(function () {
         $('#appointment').modal('hide');
         $('#success').modal('show');

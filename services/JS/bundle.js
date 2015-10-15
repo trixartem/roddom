@@ -94,21 +94,6 @@ $('body').on('click', function (e) {
 });
 
 $(document).ready(function () {
-    //$('.text-slider').slick({
-    //    slidesToShow: 3,
-    //    prevArrow: '<div class="slider-arrow__wrap _prev"><span class="slider-arrow"></span></div>',
-    //    nextArrow: '<div class="slider-arrow__wrap _next"><span class="slider-arrow"></span></div>',
-    //    variableWidth: true,
-    //    slidesToScroll: 1
-    //});
-    //$('.address-slider').slick({
-    //    slidesToShow: 3,
-    //    prevArrow: '<div class="slider-arrow__wrap _prev"><span class="slider-arrow"></span></div>',
-    //    nextArrow: '<div class="slider-arrow__wrap _next"><span class="slider-arrow"></span></div>',
-    //    variableWidth: true,
-    //    slidesToScroll: 3
-    //});
-
     $('.address-slider').lightSlider({
         addClass: 'address',
         autoWidth: true,
@@ -135,9 +120,6 @@ $(document).ready(function () {
         loop: false,
         pager: false
     });
-    //$(".calendar__list").mCustomScrollbar({
-    //    axis:"y"
-    //});
 });
 var checkedTabItem = $('.tabs__item._checked');
 var $tabs = $('.tabs__tab');
