@@ -1,7 +1,7 @@
-.idea/watcherTasks.xml
-.idea
+.idea/**
 node_modules
 bootstrap-4.0.0-alpha
+fancyapps-fancyBox-18d1712
 
 npm-debug.log
 .DS_Store

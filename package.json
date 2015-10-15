@@ -5,10 +5,10 @@
   "main": "./",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch-css": "./node_modules/stylus/bin/stylus services/CSS/index.styl  -u ./node_modules/autoprefixer-stylus/index.js --out services/CSS/index.css -w ./services/CSS -c",
-    "watch-js": "./node_modules/watchify/bin/cmd.js services/JS/bundle.js -o services/JS/index.js -v",
-    "build-js": "./node_modules/browserify/bin/cmd.js services/JS/bundle.js -o services/JS/index.js",
-    "build-css": "./node_modules/stylus/bin/stylus services/CSS/index.styl  -u ./node_modules/autoprefixer-stylus/index.js --out services/CSS/index.css ",
+    "watch-css": "./node_modules/stylus/bin/stylus specialist/CSS/index.styl  -u ./node_modules/autoprefixer-stylus/index.js --out specialist/CSS/index.css -w ./specialist/CSS -c",
+    "watch-js": "./node_modules/watchify/bin/cmd.js specialist/JS/bundle.js -o specialist/JS/index.js -v",
+    "build-js": "./node_modules/browserify/bin/cmd.js specialist/JS/bundle.js -o specialist/JS/index.js",
+    "build-css": "./node_modules/stylus/bin/stylus specialist/CSS/index.styl  -u ./node_modules/autoprefixer-stylus/index.js --out specialist/CSS/index.css ",
     "build": "npm run build-js && npm run build-css"
 
   },
